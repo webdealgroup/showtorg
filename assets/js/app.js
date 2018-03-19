@@ -295,6 +295,9 @@ $(function () {
 
         if (!$('.js-header').hasClass('fixed'))
             $('.js-dropdown-location').click();
+
+		$('.topbar__location.dropdown').removeClass('is-active');
+
     })();
 
     (function () {
