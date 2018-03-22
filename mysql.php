@@ -1,10 +1,10 @@
 <?php
 // MYSQL ============================================================================================
 // DB SETTINGS (begin)
-define('DBHOST', 'localhost');
-define('DBNAME', 'xlight');
-define('DBUSER', 'xlight');
-define('DBPASS', 'Qgxy41^0');
+define('DBHOST', '85.143.172.67');
+define('DBNAME', 'showtorg');
+define('DBUSER', 'root');
+define('DBPASS', 'HzBpHuLn12');
 define('PREFIX', 'site');
 define('PCONNECT', 0);
 //if (!defined('FORCE1251')) define('FORCE1251', 0);
