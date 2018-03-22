@@ -1,0 +1,55 @@
+     <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+       <tr>
+        <td class="banner_02">
+        
+         ~~include file="center/banner.tpl"~
+         
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <!-- all_manufacturers //-->
+         
+         ~~*include file="center/all_manufacturers.tpl"*~
+         
+        <!-- all_manufacturers_eof //-->
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <!-- browse_categories !-->
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <!-- new_products //-->
+        
+         ~~*include file="center/new_products.tpl"*~
+         ~~mod mod_name="new_products" action=""~
+         
+        <!-- new_products_eof //-->
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <!-- featured_products //--><!-- featured_products_eof //-->
+         <br>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <!-- newsdesk //-->
+        
+         ~~include file="center/newsdesk.tpl"~
+         
+         <!-- newsdesk_eof //-->
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <br>
+        </td>
+       </tr>
+      </tbody>
+     </table>

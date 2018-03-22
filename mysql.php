@@ -3,8 +3,8 @@
 // DB SETTINGS (begin)
 define('DBHOST', '85.143.172.67');
 define('DBNAME', 'showtorg');
-define('DBUSER', 'root');
-define('DBPASS', 'HzBpHuLn12');
+define('DBUSER', 'showtorg');
+define('DBPASS', 'R?vU%#');
 define('PREFIX', 'site');
 define('PCONNECT', 0);
 //if (!defined('FORCE1251')) define('FORCE1251', 0);

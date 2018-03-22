@@ -1,0 +1,46 @@
+<?php
+
+include_once('lib/JSON.php');
+
+class aModule{
+	var $action = "";
+
+	function mod_execute($params,$protocol='HTTP'){
+
+		$this->mod_name=$params['mod_name'];
+		$this->action=$params['action'];
+		$this->prot=$protocol;
+		
+		$send_params=($_SERVER["REQUEST_METHOD"] == "POST")? $_POST	: $_GET;
+		$params['send_params'] = $send_params;
+		
+		$this->execute($params);
+	}
+
+	function mod_display($protocol){
+		$tpl_path=$this->mod_name.'/'.$this->mod_name.'.tpl';
+
+		switch($protocol){
+
+			case 'HTTP': $_SESSION['smarty']->display($tpl_path);
+			break;
+
+			case 'AJAX': $output=$_SESSION['smarty']->fetch($tpl_path);
+						 $this->mod_responceXML($output);
+			break;
+		}
+	}
+    
+	function mod_display_from_base(){
+
+    $_SESSION['smarty']->register_resource("db2", array("db2_get_template",
+                                       "db2_get_timestamp",
+                                       "db2_get_secure",
+                                       "db2_get_trusted"));
+                                  
+    $_SESSION['smarty']->display("db2:".$this->mod_name);
+
+	}
+ 
+}
+?>

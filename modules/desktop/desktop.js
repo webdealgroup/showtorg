@@ -1,0 +1,40 @@
+Ext.BLANK_IMAGE_URL = 'images/s.gif';
+
+MyDesktop = new Ext.app.App({
+	init :function(){
+		Ext.QuickTips.init();
+    },
+
+	getModules : function(){
+		return [
+		
+~~$modules~
+
+		];
+	},
+
+	activeModule : function() {
+		return this.getModule(this.desktop.getActiveWindowId()+'-win');
+	},
+
+	getStartConfig : function(){
+		return {
+			title: '',
+			iconCls: 'user',
+			toolItems: [{
+				text:'Настройки',
+				iconCls:'settings',
+				handler: function() { this.getModule('settings-win').createWindow(); },
+				scope:this
+			},'-',{
+				text:'Выход',
+				iconCls:'logout',
+				scope:this,
+				handler: function() { window.location = './logout/'; }
+			}]
+		};
+	},
+	Windows : {}
+});
+
+~~$content~

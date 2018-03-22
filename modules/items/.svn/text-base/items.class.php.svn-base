@@ -1,0 +1,245 @@
+<?php
+include_once('modules/aModule.class.php');
+
+class items extends aModule
+{
+	var $mod_name=null;
+	var $disp_tpl=null;
+	var $prot=null;
+
+	function execute($arr)
+	{
+		//echo "<pre>";print_r($arr);echo "<pre>";die();
+		if ($arr['node']=="") {$arr['node']=$arr['send_params']['page'];}
+
+            $Page = new Page();
+            $i = $arr['node'];
+            $remark = array();
+            $path = ""; 
+            
+            if ($i == 1) 
+            {
+                $node = $Page->getNode($i);
+                $remark[] = array('title'=>$node[0]['title'], 'url'=>$node[0]['id']);
+            }
+            else{
+                while ($i != 1)
+                {
+                    $node = $Page->getNode($i);
+                    $path = $node[0]['id']."/".$path;
+                    $remark[] = array('title'=>$node[0]['title'], 'url'=>$node[0]['id']);
+                    $i = $node[0]['parent_id'];
+                } 
+            }
+            
+            //$path = "/1/".$path;
+            $path = $arr['send_params']['page'];
+            
+            
+    		$_SESSION['smarty']->assign('remark',array_reverse($remark));
+    		$_SESSION['smarty']->assign('path',$path);
+       
+       
+		$query="SELECT * FROM currency WHERE id = 1 ";
+		$res=rows($query);
+        $_SESSION['smarty']->assign('currency',$res[0]['value']);
+        $currency = $res[0]['value'];
+
+	$condition = array();
+	$data = rows("SELECT tree.id, MAX(items.hide) AS hide 
+				 FROM allvision.items items RIGHT JOIN allvision.tree tree
+    				ON (items.node = tree.id) 
+				 WHERE hide = 1 AND tree.id NOT IN (SELECT parent_id FROM tree)
+    			 GROUP BY tree.id");
+
+	foreach($data as $k=>$v)
+	{
+       $i = $data[$k]['id'];
+       do 
+       {   
+           if ($i==$arr['node']) {$condition[] = $data[$k]['id']; break;}
+	   	   $d = rows("SELECT parent_id FROM tree WHERE id = ".$i);
+           $i = $d[0]['parent_id'];
+       } while ($i != 1);
+	}
+
+    $where = "1";
+    $i=0;
+	foreach($condition as $k=>$v)
+	{
+        //if ($i==0) {$where =$condition[$k]; $i++; continue;}
+		$where .= ", ".$condition[$k];
+    }
+
+		$query="SELECT * FROM items WHERE hide <> 0 AND node IN (".$where.")  GROUP BY items.id ORDER BY  items.qty DESC, items.cost DESC ";
+
+
+        $list_nodes = $Page->getMenuNodes($arr['node']);
+
+		$_SESSION['smarty']->assign('list_nodes',$list_nodes);
+        
+		$this->show_items($arr, $remark, $path, $currency, $query); 
+        
+        $node = $Page->getNode($arr['node']);
+        $_SESSION['smarty']->assign('page_title',$node[0]["title"]);
+        
+		$_SESSION['smarty']->assign('page',$res[0]["title"]);
+		$_SESSION['smarty']->assign('content',$res[0]["content"]);
+		$_SESSION['smarty']->assign('page_id',$arr['send_params']['page']);
+
+		$this->mod_display($this->prot);
+	}
+
+	function show_items($arr, $remark, $path, $currency, $query)
+	{
+		$s=$arr['send_params']['s'];		
+		$gn=$arr['send_params']['gn'];
+
+		$res=rows($query);
+
+		$_SESSION['smarty']->assign('count',count($res));
+
+
+//page
+$num_disp=10;
+$group_num=0;
+$page_start=0;
+$page_long=10; 
+
+if (isset($s) && strlen($s)>0) 
+{
+	$page_start=$s;
+       $group_num=$gn;
+} 
+
+$n = count($res);
+
+//=======================
+  $list = "&nbsp;";
+  $num = $n;
+  $num = $num / $page_long;
+  $page=$group_num*$num_disp;
+
+  $root_url="index.php?page=".$arr['send_params']['page'];
+ 
+    while($page<$num)
+   {
+        $list .="|&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".$page*$page_long."&gn=".$group_num ;
+        $list .="' target='_self'>";
+
+        if ($page==($page_start / $page_long))
+    	{ $list .="<font color=\"#FF0000\">";}
+    
+        $list .=$page+1;
+
+        if ($page==($page_start / $page_long))
+    	{ $list .="</font>";}
+        $list .="</a>&nbsp;&nbsp;"; 
+        $page++;
+        
+        if (is_int($page/(($group_num+1)*$num_disp))) 
+        {
+         break;
+        }
+    }
+
+        $list .=""; 
+
+         if ($s > 0)
+            {   // (120/8-1)*8 < (15*8*1)   112<120  
+              if (($s/$page_long-1)*$page_long < ($num_disp*$page_long*$group_num)) {$gr2=$group_num-1;}else{$gr2=$group_num;}
+              $list .="&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($s/$page_long-1)*$page_long."&gn=".$gr2 ;
+              $list .="' target='_self'>Назад</a>&nbsp;&nbsp;";
+            }
+                
+         if (($s/$page_long+1)*$page_long < $n)
+            {      // (112/8+1)*8 > (8*15+15*8*0)-1    120 > 119
+              if (($s/$page_long+1)*$page_long > ($page_long*$num_disp+$num_disp*$page_long*$group_num)-1) {$gr2=$group_num+1;}else{$gr2=$group_num;}
+              $list .="&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($s/$page_long+1)*$page_long."&gn=".$gr2 ;
+              $list .="' target='_self'>Вперед</a>&nbsp;&nbsp;";
+            }
+
+         if ($group_num > 0)
+            {
+              $list .="&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($page_long*$num_disp*($group_num - 1))."&gn=".($group_num - 1) ;
+              $list .="' target='_self'> ".$num_disp." Предыдущая</a>&nbsp;&nbsp;";
+            }
+
+         if ($n > ($page_long*$num_disp+1+$num_disp*$page_long*$group_num))
+            {
+              $list .="&nbsp;&nbsp;<a  class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($page_long*$num_disp*($group_num + 1))."&gn=".($group_num + 1) ;
+              $list .="' target='_self'>Следующая ".$num_disp." </a>&nbsp;&nbsp;";
+            }
+
+
+//============
+
+		$query.=" LIMIT ".$page_start.", ".$page_long;
+
+		$res=rows($query);
+
+        $Page = new Page();  
+        
+		foreach ($res as $k => $v)
+		{
+        
+        
+            $i = $res[$k]["node"];
+
+            $path = "";
+            
+            while ($i != 1)
+            {
+                $node = $Page->getNode($i);
+                $path = $node[0]['id']."/".$path;
+                $i = $node[0]['parent_id'];
+            } 
+            
+            //$path = "1/".$path;            
+            $path = $res[$k]["node"];
+        
+            //$q="SELECT * FROM images WHERE node = ".$res[$k]["id"]." ";
+            //$r=q($q);
+            
+            $res[$k]["dir"] = $path;
+            
+            //$res[$k]["image"] = $r[0]["name"];
+            
+            $image = imagecreatefromjpeg("img/".$path."/".$res[$k]["image"]);
+    		$res[$k]["x"] = imagesx($image)/2;
+    		$res[$k]["y"] = imagesy($image)/2;
+            
+            if($res[$k]["x"]>250) {$res[$k]["x"] = 250; $res[$k]["y"] = $res[$k]["y"] * ( 250/$res[$k]["x"] ); }
+            if($res[$k]["y"]>250) {$res[$k]["y"] = 250; $res[$k]["x"] = $res[$k]["x"] * ( 250/$res[$k]["y"] ); }
+            
+            //$res[$k][cost] = number_format($res[$k][cost] * $currency, 0, '', ' ');
+
+            $credit = ($res[$k][cost]* $currency)/10;
+            if ($res[$k]["cost"] >300000 && $res[$k]["cost"] < 5000000) $res[$k]["credit"] = number_format($credit, 0, '', ' ');
+            
+            $res[$k]["cost"] = number_format($res[$k]["cost"] * $currency, 0, '', ' ');  
+
+
+            $q="SELECT * FROM description WHERE id = ".$res[$k]["id"]." ";
+            $r=rows($q);
+            
+            
+            //$res[$k]['param'] = substr($r[0]["description"], 0, strpos($r[0]["description"], '<br />')); 
+            $res[$k]["param"] = $r[0]["description"];
+             
+            
+    	}
+
+        //echo "<pre>"; print_r($res); echo "</pre>"; //die();
+
+//echo "<pre>"; print_r($res); echo "</pre>"; //die();
+
+		$_SESSION['smarty']->assign('items',$res);
+		$_SESSION['smarty']->assign('list',$list);
+
+
+	}
+    
+}
+
+?>

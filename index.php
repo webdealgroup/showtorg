@@ -6,7 +6,7 @@
     require_once('mysql.php');
 
     define("TPL_PATH", "modules");
-    require_once('/site/libs/smarty/Smarty.class.php');
+    require_once('lib/smarty/Smarty.class.php');
 
 	$post 	= ($_SERVER["REQUEST_METHOD"] == "POST")? $_POST	: $_GET;
 

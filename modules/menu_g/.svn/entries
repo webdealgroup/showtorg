@@ -1,0 +1,42 @@
+8
+
+dir
+1
+svn://igor@tl.by/allvision.by/modules/menu_g
+svn://igor@tl.by/allvision.by
+
+
+
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+
+svn:special svn:externals svn:needs-lock
+
+menu_g.class.php
+file
+
+
+
+
+2010-05-30T11:37:02.000000Z
+2c2fdd2ada0f5c2031610bf1c22f9ee6
+2010-05-30T19:12:43.725339Z
+1
+igor
+has-props
+
+menu_g.tpl
+file
+
+
+
+
+2010-05-30T13:14:16.000000Z
+2b758169408d6c2f3550eabe86ac324a
+2010-05-30T19:12:43.725339Z
+1
+igor
+has-props
+

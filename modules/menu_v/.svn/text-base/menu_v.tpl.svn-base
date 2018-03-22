@@ -1,0 +1,207 @@
+
+                        <table class="infoBox_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody><tr>
+                            <td class="infoBox_td"><table class="infoBoxContents_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td class="boxText_l"><img src="index_files/box_bottom_left.gif" alt="" border="0" width="2" height="2"></td>
+                                  <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                                  <td class="boxText">
+                                  
+                                  
+                                    <ul class="categories">
+                                  
+                                    ~~*foreach item=i from=$menu.0.sub~
+                                      <li class="bg_list_un"><a href="?page=~~$i.id~">~~$i.title~</a></li>
+                                    ~~/foreach*~
+                                    
+                                    </ul>
+                                    
+<script language="JavaScript" src="js/menu.js"></script>
+
+<div class="colcont">
+        <script language="JavaScript">
+
+mdiv('Classificator',1,1,15,0,1,0,0,'/',1);
+
+~~foreach item=i from=$menu~
+mdiv('~~$i.title~',~~$i.id~,~~$i.level~,~~$i.mylen~,~~$i.parent~,~~$i.mode~,0,0,'?page=~~$i.id~',1);
+~~/foreach~
+
+        </script>
+        <script language="JavaScript">
+            writeMenu(menu, baseString, 0)
+        </script>
+</div>
+
+                                    
+                                    </td>
+                                  <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                                  <td class="boxText_r"><img src="index_files/box_bottom_right.gif" alt="" border="0" width="2" height="2"></td>
+                                </tr>
+                              </tbody></table></td>
+                          </tr>
+                        </tbody></table>
+
+
+
+<style>
+div.mlevel1 {
+	padding: 4px 10px 4px 4px;
+	//background: url(../pics/level1.gif) no-repeat 6px 8px;	
+}
+
+div.mlevel1 a{
+	color: #535151;
+	font-weight: normal;
+	text-decoration: none;
+
+background:url("/index_files/bg_list.gif") no-repeat scroll 1px 9px transparent;
+color:#797979;
+font-size:11px;
+font-weight:normal;
+line-height:15px;
+padding:6px 1px 6px 16px;
+text-decoration:none;
+    
+}
+
+div.mlevel1 a:hover {
+	text-decoration: underline;
+}
+
+div.mlevel1 a:visited{
+	color: #ffff;
+}
+
+div.mlevel2 {
+	padding: 3px 10px 3px 28px;
+	background: url(../pics/menu.gif) no-repeat 21px 9px;	
+}
+
+div.mlevel2 a{
+	color: #333;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+div.mlevel2 a:hover {
+	text-decoration: underline;
+}
+
+div.mlevel3 {
+	padding: 3px 10px 3px 38px;
+	background: url(../pics/menu.gif) no-repeat 31px 7px;	
+}
+
+div.mlevel3 a{
+	color: #535151;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+div.mlevel3 a:hover {
+	text-decoration: underline;
+}
+
+
+div.mlevel4 {
+	padding: 4px 10px 4px 45px;
+	background: url(../pics/menu.gif) no-repeat 37px 7px;
+}
+
+div.mlevel4 a{
+	color: #535151;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+div.mlevel4 a:hover {
+	text-decoration: underline;
+}
+
+div.mlevel1sel {
+    font-size:11px;
+	padding: 4px 10px 4px 18px;
+    background:url("/index_files/bg_list.gif") no-repeat scroll 6px 8px transparent;
+
+	//background: url(../pics/level1.gif) no-repeat 6px 8px;	
+}
+
+div.mlevel1sel a{
+    font-size:11px;
+	color: #535151;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.mlevel1sel a:hover {
+    font-size:11px;
+	text-decoration: underline;
+}
+
+div.mlevel2sel {
+	padding: 3px 10px 3px 28px;
+	background: url(../pics/menusel.gif) no-repeat 21px 9px;	
+}
+
+div.mlevel2sel a{
+	color: #535151;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.mlevel2sel a:hover {
+	text-decoration: underline;
+}
+
+div.mlevel3sel {
+	padding: 3px 10px 3px 38px;
+	background: url(../pics/menusel.gif) no-repeat 31px 9px;
+}
+
+div.mlevel3sel a{
+	color: #535151;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.mlevel3sel a:hover {
+	text-decoration: underline;
+}
+
+
+div.mlevel4sel {
+	padding: 4px 10px 4px 45px;
+	background: url(../pics/menusel.gif) no-repeat 37px 9px;
+}
+
+div.mlevel4sel a{
+	color: #535151;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.mlevel4sel a:hover {
+	text-decoration: underline;
+}
+
+div.ms {
+    background: url(../pics/menu_bg.gif) repeat-x;
+	font-size: 1px;
+	margin: 0 5px 0 5px;
+	padding: 0;
+	min-height: 1px;
+}
+</style>
+
+
+
+
+
+

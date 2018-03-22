@@ -1,0 +1,76 @@
+                <table class="box_width_right" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>                    
+                    <!-- loginbox //-->
+                    <tr>
+                        <td>
+                      
+                            ~~*include file="right/enter.tpl"*~
+                        
+                        </td>
+                    </tr>
+                    <!-- loginbox_eof //-->
+                    
+                    <!-- wishlist //-->
+                    <tr>
+                      <td>
+                      
+                            ~~*include file="right/wishlist.tpl"*~
+                        
+                        </td>
+                    </tr>
+                    <!-- wishlist_eof //-->
+                    <!-- best_sellers //-->
+                    <tr>
+                      <td valign="top">
+                      
+                            ~~include file="right/best_sellers.tpl"~
+                        
+                        </td>
+                    </tr>
+                    <!-- best_sellers_eof //-->
+
+                    <!-- visitor_e-mail //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="right/subscribe.tpl"~
+                        
+                        </td>
+                    </tr>
+                    <!-- visitor_email_eof //-->
+                    <!-- featured_products //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="right/featured_products.tpl"~
+                        
+                        </td>
+                    </tr>
+                    <!-- featured_products_eof //-->
+                    <!-- reviews //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="right/reviews.tpl"~
+                        
+                        </td>
+                    </tr>
+                    <!-- reviews_eof //-->
+                    <!-- notifications //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="left/information_pages.tpl"~
+                      
+                      </td>
+                    </tr>
+                    <!-- notifications_eof //-->
+                    <!-- icq //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="right/icq.tpl"~
+                        
+                        </td>
+                    </tr>
+                  </tbody></table>

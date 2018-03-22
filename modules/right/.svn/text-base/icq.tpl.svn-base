@@ -1,0 +1,30 @@
+                      <table class="infoBoxHeading_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody><tr>
+                            <td class="infoBoxHeading_l"><img src="index_files/infoBoxHeading_l.gif" alt="" border="0" width="2" height="2"></td>
+                            <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                            <td class="infoBoxHeading_td">Консультант</td>
+                            <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                            <td class="infoBoxHeading_r"><img src="index_files/infoBoxHeading_r.gif" alt="" border="0" width="2" height="2"></td>
+                          </tr>
+                        </tbody></table>
+                        <script type="text/javascript" src="index_files/skypeCheck.js"></script>
+                        <table class="infoBox_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody><tr>
+                            <td class="infoBox_td"><table class="infoBoxContents_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td class="boxText_l"><img src="index_files/box_bottom_left.gif" alt="" border="0" width="2" height="2"></td>
+                                  <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                                  <td class="boxText"><p>ICQ:&nbsp;<img src="index_files/online.gif" alt="" longdesc="http://status.icq.com/online.gif?icq=325901214&amp;img=27" border="0">
+									325901214</p>
+                                    ~~*<p>SKYPE:&nbsp;<img src="index_files/skype.png" alt="" border="0">&nbsp;<a href="skype:skype.name?call" onclick="return skypeCheck();">skype.name</a></p>*~
+                                    <p><img src="index_files/telephone.gif" alt="" border="0" width="16" height="16">+375 (17) 237-45-90</p>
+                                    <p><img src="index_files/telephone.gif" alt="" border="0" width="16" height="16">+375 (17) 237-46-72</p>
+                                    <p><img src="index_files/telephone.gif" alt="" border="0" width="16" height="16">+375 (17) 334-48-28</p>
+                                    </td>
+                                  <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                                  <td class="boxText_r"><img src="index_files/box_bottom_right.gif" alt="" border="0" width="2" height="2"></td>
+                                </tr>
+                              </tbody></table>
+                              </td>
+                          </tr>
+                        </tbody></table>

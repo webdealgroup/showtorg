@@ -1,0 +1,79 @@
+<?php
+include_once('modules/aModule.class.php');
+
+class item extends aModule
+{
+	var $mod_name=null;
+	var $disp_tpl=null;
+	var $prot=null;
+
+	function execute($arr)
+	{
+		//echo "<pre>";print_r($arr);echo "<pre>";die();
+		$query="SELECT items.*
+		FROM items 
+		WHERE items.id = ".$arr['send_params']['id']." ";
+
+        $res=rows($query);
+
+		if ($arr['node']=="") {$arr['node']=$res[0]['node'];}
+		if ($arr['node']=="") {$arr['node']=1;}
+        
+            $Page = new Page();
+            $i = $arr['node'];
+            $remark = array();
+            $path = "";
+            
+            
+            $remark[] = array('title'=>$res[0]['name'], 'url'=>$res[0]['id']); 
+            
+            while ($i != 1)
+            {
+                $node = $Page->getNode($i);
+                $path = $node[0]['id']."/".$path;
+                $remark[] = array('title'=>$node[0]['title'], 'url'=>$node[0]['id']);
+                $i = $node[0]['parent_id'];
+            } 
+            
+            //$path = "/1/".$path;
+            $path = $arr['node'];
+            
+    		$_SESSION['smarty']->assign('remark',array_reverse($remark));
+    		$_SESSION['smarty']->assign('path',$path);
+
+            $res[0]["dir"] = $path;
+            
+            $q="SELECT * FROM info WHERE id = ".$res[0]["id"]." ";
+            $r=rows($q);
+            
+            $res[0]["param"] = $r[0]["description"];
+            
+		$query="SELECT * FROM currency WHERE id = 1 ";
+		$r=rows($query);
+        $_SESSION['smarty']->assign('currency',$r[0]['value']);
+
+            $credit = ($res[0]["cost"]* $r[0]['value'])/10;
+            if ($res[0]["cost"] >300000 && $res[0]["cost"] < 5000000) $res[0]["credit"] = number_format($credit, 0, '', ' ');
+
+            $res[0]["cost"] = number_format($res[0]["cost"] * $r[0]['value'], 0, '', ' ');            
+
+
+		$_SESSION['smarty']->assign('items',$res);
+
+
+        $list_nodes = $Page->getMenuNodes($arr['node']);
+
+		$_SESSION['smarty']->assign('list_nodes',$list_nodes);
+        
+        
+        $node = $Page->getNode($arr['node']);
+        $_SESSION['smarty']->assign('page_title',$node[0]["title"]);
+        
+
+
+		$this->mod_display($this->prot);
+	}
+
+}
+
+?>

@@ -1,0 +1,52 @@
+8
+
+dir
+1
+svn://igor@tl.by/allvision.by/modules/pages
+svn://igor@tl.by/allvision.by
+
+
+
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+
+svn:special svn:externals svn:needs-lock
+
+pages.class.php
+file
+
+
+
+
+2010-05-11T09:20:38.000000Z
+0bfc0c027c1c3caf91a74d69428a20a4
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+pages_old.tpl
+file
+
+
+
+
+2010-05-30T13:22:50.000000Z
+f77f70f0ce30db29d7848c156eadd1ad
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+pages.tpl
+file
+
+
+
+
+2010-05-30T13:24:09.000000Z
+6e3adcd79b5fd8d55476ea4dd7081798
+2010-05-30T19:12:43.725339Z
+1
+igor
+

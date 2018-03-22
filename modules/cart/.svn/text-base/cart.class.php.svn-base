@@ -1,0 +1,155 @@
+<?php
+include_once('modules/aModule.class.php');
+
+class cart extends aModule
+{
+	var $mod_name=null;
+	var $disp_tpl=null;
+	var $prot=null;
+
+	function execute($arr)
+	{
+		//echo "<pre>";print_r($arr);echo "<pre>";//die();
+        //unset($_SESSION['cart']);
+        
+        if (isset($_SESSION['cart']['message'])) unset($_SESSION['cart']['message']);
+        
+        if (isset($arr['action']) && strlen($arr['action'])!=0)
+            $action = $arr['action'];
+        
+        if (isset($arr['send_params']['action']) && strlen($arr['send_params']['action'])!=0) 
+        {
+            $action = $arr['send_params']['action'];
+        }
+        
+        if ($action == 'show_cart') $this->show_cart($arr); 
+        
+        if ($action == 'add_cart') 
+        {
+            $cart = $_SESSION['cart']['items'];
+            $i=0;
+            foreach($cart as $k=>$v)
+                if ($cart[$k]['id']==$arr['send_params']['id']) $i++;
+            
+            if ($i!=0) 
+            { 
+                $_SESSION['cart']['message'] = "Такой товар уже есть в корзине.";
+            }
+            else
+            {
+                $item = array();
+                $item['id'] =  $arr['send_params']['id'];
+                $item['qty'] = 1;
+            
+                $_SESSION['cart']['items'][] =  $item;
+                $_SESSION['cart']['message'] = "Товар добавлен в корзину.\\nДля оформления заказа перейдите в корзину\\nпо ссылке в верхнем меню.";
+            }
+            
+            $json = new Services_JSON();
+            echo $json->encode($_SESSION['cart']);
+        }
+
+        if ($action == 'cart_process') 
+        {
+            $json = new Services_JSON();
+
+            $account = array();
+            $account["real_name"] = $arr['send_params']['name'];
+            $account["phone"] = $arr['send_params']['phone'];
+            $account["email"] = $arr['send_params']['email'];
+            $account["street_address"] = $arr['send_params']['address'];
+            
+            $account_id = insert("accounts", $account);
+            $_SESSION['cart']['account_id'] = $account_id;
+
+            $cart = array();
+            $cart = $_SESSION['cart']['items'];
+
+            foreach ($cart as $k=>$v)
+            {
+                $cart_items = array();
+                $cart_items["item_id"] = $cart[$k]['id'];
+                $cart_items["qty"] = $cart[$k]['qty']; 
+                $cart_items["account_id"] = $account_id;
+
+                $_SESSION['cart']['cart_items'][] = insert("cart", $cart_items);
+                sleep(1);
+            }
+
+            unset($_SESSION['cart']['items']);
+
+            $_SESSION['cart']['message'] = "Заказ принят. <br /><h2>Заказ № <span style='text-color: #ff0000;'>".$account_id."</span></h2>";
+            echo $json->encode($_SESSION['cart']);
+        }
+        
+        if ($action == 'cart_change_value') 
+        {
+            $json = new Services_JSON();
+            $cart = $_SESSION['cart']['items'];
+            foreach($cart as $k=>$v)
+            {
+                if ($cart[$k]['id']==$arr['send_params']['id'])
+                {
+                    $_SESSION['cart']['items'][$k]['id'] = $cart[$k]['id'];
+                    $_SESSION['cart']['items'][$k]['qty'] = $arr['send_params']['qty'];
+                }
+            }
+             echo $json->encode($_SESSION['cart']);
+        }
+
+        if ($action == 'cart_delete_value') 
+        {
+            $json = new Services_JSON();
+            $cart = $_SESSION['cart']['items'];
+            unset($_SESSION['cart']['items']);
+            $i=0;
+            foreach($cart as $k=>$v)
+            {
+                if ($cart[$k]['id']!=$arr['send_params']['id'])
+                {    
+                    $_SESSION['cart']['items'][$k]['id'] = $cart[$k]['id'];
+                    $_SESSION['cart']['items'][$k]['qty'] = $cart[$k]['qty'];
+                    $i++;
+                }
+            }
+            
+            if ($i==0) $_SESSION['cart']['message'] = "Корзина пуста";
+           
+            echo $json->encode($_SESSION['cart']);
+        }
+
+        $_SESSION['smarty']->assign('action' , $action);
+
+		$this->mod_display($this->prot);
+	}
+    
+    function show_cart($arr)
+    {
+    
+        $cart = array();
+        $cart = $_SESSION['cart']['items'];
+
+        $i=0;
+        
+        foreach ($cart as $k=>$v)
+        {
+            if ($i==0) {$where =$cart[$k]['id']; $i++; continue;}
+	    	$where .= ", ".$cart[$k]['id'];
+        }
+        
+        if (strlen($where)!=0)
+        {
+            $where = "AND id IN (".$where.") ";
+		    $query="SELECT * FROM items WHERE hide <> 0 ".$where;
+            $res=rows($query);
+        }
+        
+        //echo "<pre>"; print_r($res); echo "</pre>"; //die();
+        
+        $_SESSION['smarty']->assign('items' , $res);
+    
+    }
+
+}
+
+?>

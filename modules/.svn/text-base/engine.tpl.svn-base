@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>~~$title~</title>
+<link rel="stylesheet" type="text/css" href="js/ext/resources/css/ext-all.css">
+<script type="text/javascript" src="js/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="js/ext/ext-all.js"></script>
+<script type="text/javascript" src="js/StartMenu.js"></script>
+<script type="text/javascript" src="js/TaskBar.js"></script>
+<script type="text/javascript" src="js/Desktop.js"></script>
+<script type="text/javascript" src="js/App.js"></script>
+<script type="text/javascript" src="js/Module.js"></script>
+
+<script type="text/javascript" src="data-view-plugins.js"></script>
+<script type="text/javascript" src="js/boxover.js"></script>
+
+<script type="text/javascript" src="engine.php?m=desktop"></script>
+
+<link rel="stylesheet" type="text/css" href="data-view.css" />
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script type="text/javascript" src="../Allvision.by_files/jquery.js"></script>
+</head>
+<body scroll="no">
+
+<div id="x-desktop">
+	<dl id="x-shortcuts">
+		~~foreach from=$shortcuts item=s~
+
+			<dt class="shortcut" id="~~$s.id~-win-shortcut">
+				<a href="#"><img src="images/s.gif" style="background-image: url(~~$s.img~); filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='~~$s.img~', sizingMethod='scale');">
+				<div>~~$s.text~</div></a>
+			</dt>
+
+		~~/foreach~
+	</dl>
+</div>
+
+<div id="ux-taskbar">
+	<div id="ux-taskbar-start"></div>
+	<div id="ux-taskbuttons-panel"></div>
+	<div class="x-clear"></div>
+</div>
+
+</body>
+</html>

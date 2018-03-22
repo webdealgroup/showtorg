@@ -1,0 +1,40 @@
+8
+
+dir
+1
+svn://igor@tl.by/allvision.by/modules/test
+svn://igor@tl.by/allvision.by
+
+
+
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+
+svn:special svn:externals svn:needs-lock
+
+page.tpl
+file
+
+
+
+
+2010-05-30T13:29:31.000000Z
+8ab51d0b270a48665421aa00e9d7a683
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+time.tpl
+file
+
+
+
+
+2010-03-14T18:01:23.000000Z
+88b1c5876279bfff23f9c7dc892af2d2
+2010-05-30T19:12:43.725339Z
+1
+igor
+

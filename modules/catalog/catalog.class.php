@@ -1,0 +1,176 @@
+<?php
+
+include_once('modules/aModule.class.php');
+ 
+class catalog extends aModule
+{
+	var $mod_name=null;
+	var $disp_tpl=null;
+	var $prot=null;
+
+	function execute($arr)
+	{    
+        echo "<pre>"; print_r($arr); echo "</pre>"; die();
+        $menu_v = array(); 
+        $a1 = array();
+        $a2 = array();
+        $a3 = array();
+        $a4 = array();
+        $a5 = array();
+        $a6 = array();
+        
+        $i = 0;
+
+
+		$a1 = $this->getNode(1);
+
+		foreach($a1 as $k1=>$v1)
+		{
+			$a2 = $this->getMenuNodes($a1[$k1]['id']);
+			
+			foreach($a2 as $k2=>$v2)
+			{ 
+				$menu_v[$i] = $a2[$k2];
+				$menu_v[$i]['level'] = 2;
+				$menu_v[$i]['mylen'] = $this->countChild($a2[$k2]['id']);
+				if ($menu_v[$i]['mylen'] == 0)
+				{
+					$menu_v[$i]['mode'] = 2;
+				}
+				else
+				{
+					$menu_v[$i]['mode'] = 3;
+				}
+				$i++;
+				$a3 = $this->getMenuNodes($a2[$k2]['id']);
+				
+				foreach($a3 as $k3=>$v3)
+				{ 
+					$menu_v[$i] = $a3[$k3];
+					$menu_v[$i]['level'] = 3;
+					$menu_v[$i]['mylen'] = $this->countChild($a3[$k3]['id']);
+					if ($menu_v[$i]['mylen'] == 0)
+					{
+						$menu_v[$i]['mode'] = 2;
+					}
+					else
+					{
+						$menu_v[$i]['mode'] = 3;
+					}
+					$i++;
+					$a4 = $this->getMenuNodes($a3[$k3]['id']);
+					
+					foreach($a4 as $k4=>$v4)
+					{ 
+						$menu_v[$i] = $a4[$k4];
+						$menu_v[$i]['level'] = 4;
+						$menu_v[$i]['mylen'] = $this->countChild($a4[$k4]['id']);
+						if ($menu_v[$i]['mylen'] == 0)
+						{
+							$menu_v[$i]['mode'] = 2;
+						}
+						else
+						{
+							$menu_v[$i]['mode'] = 3;
+						}
+						$i++;
+						$a5 = $this->getMenuNodes($a4[$k4]['id']);
+						
+						foreach($a5 as $k5=>$v5)
+						{ 
+							$menu_v[$i] = $a5[$k5];
+							$menu_v[$i]['level'] = 5;
+							$menu_v[$i]['mylen'] = $this->countChild($a5[$k5]['id']);
+							if ($menu_v[$i]['mylen'] == 0)
+							{
+								$menu_v[$i]['mode'] = 2;
+							}
+							else
+							{
+								$menu_v[$i]['mode'] = 3;
+							}
+							$i++;
+							$a6 = $this->getMenuNodes($a5[$k5]['id']);
+							
+							foreach($a6 as $k6=>$v6)
+							{ 
+								$menu_v[$i] = $a6[$k6];
+								$menu_v[$i]['level'] = 6;
+								$menu_v[$i]['mylen'] = $this->countChild($a6[$k6]['id']);
+								if ($menu_v[$i]['mylen'] == 0)
+								{
+									$menu_v[$i]['mode'] = 2;
+								}
+								else
+								{
+									$menu_v[$i]['mode'] = 3;
+								}
+								$i++;
+								
+							}
+							
+						}
+					}
+				}
+			}
+		}
+
+        //echo "<pre>"; print_r($menu_v); echo "</pre>"; //die();
+
+        $_SESSION['smarty']->assign('menu', $menu_v);
+        $_SESSION['smarty']->assign('menu_g',$this->getChildren(1));
+        $_SESSION['smarty']->assign('page', $arr['send_params']['page']);
+		$this->mod_display($this->prot);
+	}
+
+        function getM() 
+        {
+/*           if ($id!=0) 
+           {
+                $arr = $this->getMenuNodes($id);
+           
+                foreach($arr as $k=>$v)
+                { 
+                    $menu_v[] = "";
+                    this.getMenu($menu_v, $arr[$k]['id']);
+                }
+            }
+*/
+            return 0;
+        }
+
+
+        function getNode($id=0) 
+        {
+        	$result = rows("SELECT * FROM `tree` WHERE `id` = ".$id." ORDER BY `sort` ASC ");
+            return $result;
+        }   
+
+        function getMenuNodes($id=0) 
+        {
+        	//$query="SELECT id,title FROM `tree` WHERE `parent_id` = ? AND status <> 4 ORDER BY `sort` ASC ";
+			$result=rows("SELECT t.id, t.title, t.status, MAX(i.hide) as hide, parent_id as parent 
+						FROM items i RIGHT JOIN tree t
+            				ON (i.node = t.id)
+						WHERE t.`parent_id` = ".$id." AND t.status <> 4  AND ( hide = 1 OR hide IS NULL)
+					GROUP BY t.id
+					ORDER BY t.`sort` ASC
+				   ");
+            return $result;
+        }
+
+        function getChildren($id=0) 
+        {
+        	$result=rows("SELECT * FROM `tree` WHERE `parent_id` = ".$id." ORDER BY `sort` ASC ");
+            return $result;
+        }
+
+        function countChild($id=0) 
+        {
+        	$result = rows("SELECT COUNT(*) as count FROM `tree` WHERE `parent_id` = ".$id." ORDER BY `sort` ASC ");
+            return $result[0]['count'];
+        }
+
+}
+
+?>

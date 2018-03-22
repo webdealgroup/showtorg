@@ -1,0 +1,40 @@
+8
+
+dir
+1
+svn://igor@tl.by/allvision.by/modules/search
+svn://igor@tl.by/allvision.by
+
+
+
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+
+svn:special svn:externals svn:needs-lock
+
+search.class.php
+file
+
+
+
+
+2010-05-26T15:00:15.000000Z
+6f94727699f94be929002fd0f1c1f3ca
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+search.tpl
+file
+
+
+
+
+2010-05-30T13:28:11.000000Z
+ec0c20136c3b775e255798eb62be54be
+2010-05-30T19:12:43.725339Z
+1
+igor
+

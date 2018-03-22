@@ -1,0 +1,45 @@
+8
+
+dir
+1
+svn://igor@tl.by/allvision.by/modules/items
+svn://igor@tl.by/allvision.by
+
+
+
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+
+svn:special svn:externals svn:needs-lock
+
+items.tpl
+file
+
+
+
+
+2010-05-30T18:37:22.000000Z
+0b8aededc6832fecb910a52b2835e451
+2010-05-30T19:12:43.725339Z
+1
+igor
+has-props
+
+tmp
+dir
+
+items.class.php
+file
+
+
+
+
+2010-05-30T18:22:20.000000Z
+aac1306c00f6db5919772d5d6e18414a
+2010-05-30T19:12:43.725339Z
+1
+igor
+has-props
+

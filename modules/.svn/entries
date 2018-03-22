@@ -1,0 +1,304 @@
+8
+
+dir
+1
+svn://igor@tl.by/allvision.by/modules
+svn://igor@tl.by/allvision.by
+
+
+
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+
+svn:special svn:externals svn:needs-lock
+
+center
+dir
+
+aModule.class.php
+file
+
+
+
+
+2010-05-30T11:11:19.000000Z
+c9576581401d9803e017811a9f250384
+2010-05-30T19:12:43.725339Z
+1
+igor
+has-props
+
+items
+dir
+
+upload.tpl
+file
+
+
+
+
+2010-05-30T12:45:54.000000Z
+87d38cc8f8c9ae535dc516bb8ea7dbb7
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+upload
+dir
+
+cart.tpl
+file
+
+
+
+
+2010-05-30T12:34:48.000000Z
+fbb1b053a5d4ab9954af5f6045faaf26
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+menu_v
+dir
+
+cart
+dir
+
+pages
+dir
+
+search.tpl
+file
+
+
+
+
+2010-05-30T12:44:52.000000Z
+653441250d012453966048e4b2efd1ae
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+search
+dir
+
+login.tpl
+file
+
+
+
+
+2010-05-30T12:40:27.000000Z
+934c6365c3c998010aafd1d3edbcf66a
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+login
+dir
+
+desktop
+dir
+
+items_page.tpl
+file
+
+
+
+
+2010-05-30T12:39:22.000000Z
+a7b7c91d152e8aa379c0cbc1155371fc
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+test
+dir
+
+scripts_and_css.tpl
+file
+
+
+
+
+2010-05-21T12:46:26.000000Z
+7a512f97afd289d448454c290055ecf3
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+main.tpl
+file
+
+
+
+
+2010-05-30T12:41:25.000000Z
+85bb77383e09c4689ac7da33d90f343f
+2010-05-30T19:12:43.725339Z
+1
+igor
+has-props
+
+cart_page.tpl
+file
+
+
+
+
+2010-05-30T12:36:03.000000Z
+f3d000801e79588ae0a5482690f7aacc
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+s_form.tpl
+file
+
+
+
+
+2010-05-30T13:34:43.000000Z
+9e2ee99d55a1c370d73535e2c2c5602d
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+header.tpl
+file
+
+
+
+
+2010-05-30T12:37:23.000000Z
+ea9906585441a61d1794076d64a8897a
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+left.tpl
+file
+
+
+
+
+2010-05-30T12:40:14.000000Z
+0e804eb78cfa05d54fff3914db7a09c0
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+left
+dir
+
+item.tpl
+file
+
+
+
+
+2010-05-30T12:39:06.000000Z
+424eb672f5e5f0abc1c8d00fbcc01c66
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+p.tpl
+file
+
+
+
+
+2010-05-30T12:42:28.000000Z
+f1a9a493bb1bcc60a1cbeec9fee3f1c1
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+item
+dir
+
+engine.tpl
+file
+
+
+
+
+2010-03-15T03:40:14.000000Z
+3c0386b501b6bba1a3608bdb2350ec59
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+index.tpl
+file
+
+
+
+
+2010-05-30T16:19:02.000000Z
+10c1ff11bc7e06b46bc297cf48f68606
+2010-05-30T19:12:43.725339Z
+1
+igor
+has-props
+
+mod.class.php
+file
+
+
+
+
+2008-06-29T21:48:36.000000Z
+c60a4a9a5d4b672b6b4eb440cd9de2c5
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+page.tpl
+file
+
+
+
+
+2010-05-30T12:42:40.000000Z
+7616ccc6ddb605295ac2ebf9a123a802
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+menu_g
+dir
+
+right.tpl
+file
+
+
+
+
+2010-05-30T12:43:46.000000Z
+2edd5d62ededb55952cc6146ad0774e8
+2010-05-30T19:12:43.725339Z
+1
+igor
+
+new_products
+dir
+
+right
+dir
+
+center.tpl
+file
+
+
+
+
+2010-05-30T12:36:46.000000Z
+413603f6fc11be4e1bbb314a513add01
+2010-05-30T19:12:43.725339Z
+1
+igor
+

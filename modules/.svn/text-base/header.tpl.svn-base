@@ -1,0 +1,41 @@
+            <table class="wrapper_header_t" border="0" cellpadding="0" cellspacing="0">
+              <tbody><tr>
+                <td class="wrapper_header_l"><table class="wrapper_header_b" border="0" cellpadding="0" cellspacing="0">
+                    <tbody><tr>
+                      <td class="wrapper_header_r"><table class="wrapper_header_tl" border="0" cellpadding="0" cellspacing="0">
+                          <tbody><tr>
+                            <td class="wrapper_header_tr"><table class="wrapper_header_bl" border="0" cellpadding="0" cellspacing="0">
+                                <tbody><tr>
+                                  <td class="wrapper_header_br"><table border="0" cellpadding="0" cellspacing="0">
+                                      <tbody><tr>
+                                        <td class="logo"><a href="index.php"><img src="index_files/logo.jpg" alt="" title="" border="0"></a></td>
+                                        <td style="vertical-align: middle;">&nbsp;</td>
+                                      </tr>
+                                    </tbody></table></td>
+                                </tr>
+                              </tbody></table></td>
+                          </tr>
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+            
+            
+            
+            <table border="0" cellpadding="0" cellspacing="0">
+              <tbody><tr>
+                <td style="border-left: 1px solid rgb(207, 207, 207); border-right: 1px solid rgb(207, 207, 207); padding: 6px 6px 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"><table style="background: transparent url(index_files/menu_bg.gif) repeat-x scroll 0px 0px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" border="0" cellpadding="0" cellspacing="0">
+                    <tbody><tr>
+                      <td class="menu">
+                      
+                      ~~mod mod_name="menu_g" action=""~
+                      
+                      </td>
+
+                      ~~include file="s_form.tpl"~
+
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>

@@ -1,0 +1,189 @@
+<?php
+include_once('modules/aModule.class.php');
+
+class search extends aModule
+{
+	var $mod_name=null;
+	var $disp_tpl=null;
+	var $prot=null;
+
+	function execute($arr)
+	{
+		//echo "<pre>";print_r($arr);echo "<pre>";die();
+		if ($arr['node']=="") {$arr['node']=$arr['send_params']['page'];}
+		if ($arr['node']=="") {$arr['node']=1;}
+        
+            $Page = new Page();
+            $i = $arr['node'];
+            $remark = array();
+            $path = "";
+            
+            while ($i != 1)
+            {
+                $node = $Page->getNode($i);
+                $path = $node[0]['id']."/".$path;
+                $remark[] = array('title'=>$node[0]['title'], 'url'=>$node[0]['id']);
+                $i = $node[0]['parent_id'];
+            } 
+            
+            //$path = "/1/".$path;
+            $path = $arr['node'];
+            
+    		$_SESSION['smarty']->assign('remark',array_reverse($remark));
+    		$_SESSION['smarty']->assign('path',$path);
+       
+       
+		$query="SELECT * FROM currency WHERE id = 1 ";
+		$res=$this->executeDBQuery($query);
+        $_SESSION['smarty']->assign('currency',$res[0]['value']);
+        $currency = $res[0]['value'];
+        
+/*
+		$query="SELECT items.* , description.*
+		FROM items LEFT JOIN description ON (items.id=description.id)  
+		WHERE 
+            items.hide <> 0 
+			AND (items.name like '%".$arr['send_params']['searchword']."%' OR description.description like '%".$arr['send_params']['searchword']."%') 
+        GROUP BY items.id
+        ORDER BY  items.qty DESC, items.cost DESC ";
+*/
+
+		$query="SELECT i.*
+		FROM items as i
+		WHERE 
+            i.hide <> 0 
+			AND (i.name like '%".$arr['send_params']['searchword']."%') 
+        
+        
+        UNION
+        
+        SELECT items.* 
+		FROM items LEFT JOIN description ON (items.id=description.id)  
+		WHERE 
+            items.hide <> 0 
+			AND (description.description like '%".$arr['send_params']['searchword']."%') 
+        GROUP BY items.id";
+
+
+		$this->show_items($arr, $remark, $path, $currency, $query); 
+		$this->mod_display($this->prot);
+	}
+
+
+	function show_items($arr, $remark, $path, $currency, $query)
+	{
+		$s=$arr['send_params']['s'];		
+		$gn=$arr['send_params']['gn'];
+		$res=$this->executeDBQuery($query);
+		$_SESSION['smarty']->assign('count',count($res));
+
+//page
+$num_disp=10;
+$group_num=0;
+$page_start=0;
+$page_long=20; 
+
+if (isset($s) && strlen($s)>0) 
+{
+    $page_start=$s;
+    $group_num=$gn;
+} 
+
+$n = count($res);
+
+//=======================
+  $list = "&nbsp;";
+  $num = $n;
+  $num = $num / $page_long;
+  $page=$group_num*$num_disp;
+
+  $root_url="index.php?mod_name=search&searchword=".$arr['send_params']['searchword'];
+ 
+    while($page<$num)
+   {
+        $list .="|&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".$page*$page_long."&gn=".$group_num ;
+        $list .="' target='_self'>";
+
+        if ($page==($page_start / $page_long))
+    	{ $list .="<font color=\"#FF0000\">";}
+    
+        $list .=$page+1;
+
+        if ($page==($page_start / $page_long))
+    	{ $list .="</font>";}
+        $list .="</a>&nbsp;&nbsp;"; 
+        $page++;
+        
+        if (is_int($page/(($group_num+1)*$num_disp))) 
+        {
+         break;
+        }
+    }
+
+        $list .=""; 
+
+         if ($s > 0)
+            {   // (120/8-1)*8 < (15*8*1)   112<120  
+              if (($s/$page_long-1)*$page_long < ($num_disp*$page_long*$group_num)) {$gr2=$group_num-1;}else{$gr2=$group_num;}
+              $list .="&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($s/$page_long-1)*$page_long."&gn=".$gr2 ;
+              $list .="' target='_self'>Назад</a>&nbsp;&nbsp;";
+            }
+                
+         if (($s/$page_long+1)*$page_long < $n)
+            {      // (112/8+1)*8 > (8*15+15*8*0)-1    120 > 119
+              if (($s/$page_long+1)*$page_long > ($page_long*$num_disp+$num_disp*$page_long*$group_num)-1) {$gr2=$group_num+1;}else{$gr2=$group_num;}
+              $list .="&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($s/$page_long+1)*$page_long."&gn=".$gr2 ;
+              $list .="' target='_self'>Вперед</a>&nbsp;&nbsp;";
+            }
+
+         if ($group_num > 0)
+            {
+              $list .="&nbsp;&nbsp;<a class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($page_long*$num_disp*($group_num - 1))."&gn=".($group_num - 1) ;
+              $list .="' target='_self'>Предыдущие ".$num_disp." </a>&nbsp;&nbsp;";
+            }
+
+         if ($n > ($page_long*$num_disp+1+$num_disp*$page_long*$group_num))
+            {
+              $list .="&nbsp;&nbsp;<a  class='lnk2' style='text-decoration:none;' href='".$root_url."&s=".($page_long*$num_disp*($group_num + 1))."&gn=".($group_num + 1) ;
+              $list .="' target='_self'>Следующие ".$num_disp." </a>&nbsp;&nbsp;";
+            }
+
+
+//============
+
+		$query.=" LIMIT ".$page_start.", ".$page_long;
+		$res=$this->executeDBQuery($query);
+        $Page = new Page();  
+		foreach ($res as $k => $v)
+		{
+            $i = $res[$k]["node"];
+            $path = "";
+            while ($i != 1)
+            {
+                $node = $Page->getNode($i);
+                $path = $node[0]['id']."/".$path;
+                $i = $node[0]['parent_id'];
+            } 
+            
+            //$path = "1/".$path;  
+            $path = $res[$k]["node"];  
+            
+            $res[$k]["dir"] = $path;
+            
+            $credit = ($res[$k][cost]* $currency)/10;
+            if ($res[$k]["cost"] >300000 && $res[$k]["cost"] < 5000000) $res[$k]["credit"] = number_format($credit, 0, '', ' ');
+            
+            $res[$k]["cost"] = number_format($res[$k]["cost"] * $currency, 0, '', ' ');  
+            
+            $q="SELECT * FROM description WHERE id = ".$res[$k]["id"]." ";
+            $r=$this->executeDBQuery($q);
+            
+            //$res[$k]['param'] = substr($r[0]["description"], 0, strpos($r[0]["description"], '<br />')); 
+            $res[$k]["param"] = $r[0]["description"];
+    	}
+		$_SESSION['smarty']->assign('items',$res);
+		$_SESSION['smarty']->assign('list',$list);
+	}
+
+}
+?>

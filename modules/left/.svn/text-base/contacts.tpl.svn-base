@@ -1,0 +1,33 @@
+                      <table class="infoBoxHeading_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody><tr>
+                            <td class="infoBoxHeading_l"><img src="index_files/infoBoxHeading_l.gif" alt="" border="0" width="2" height="2"></td>
+                            <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                            <td class="infoBoxHeading_td"><span lang="en-us">
+							Наши телефоны</span></td>
+                            <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                            <td class="infoBoxHeading_r"><img src="index_files/infoBoxHeading_r.gif" alt="" border="0" width="2" height="2"></td>
+                          </tr>
+                        </tbody></table>
+                        <table class="infoBox_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody><tr>
+                            <td class="infoBox_td"><table class="infoBoxContents_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td class="boxText_l"><img src="index_files/box_bottom_left.gif" alt="" border="0" width="2" height="2"></td>
+                                  <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                                  <td class="boxText" style="text-align:center;">
+                                    Городские<br />
+									+375 (17) 237-45-90<br />
+                                    +375 (17) 237-46-72<br />
+                                    +375 (17) 334-48-28<br />
+                                    <br />
+                                    Мобильные<br />
+                                    +375 (44) 751-16-11<br />
+                                    +375 (29) 751-16-11<br />
+                                    
+                                    </td>
+                                  <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                                  <td class="boxText_r"><img src="index_files/box_bottom_right.gif" alt="" border="0" width="2" height="2"></td>
+                                </tr>
+                              </tbody></table></td>
+                          </tr>
+                        </tbody></table>

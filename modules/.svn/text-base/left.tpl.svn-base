@@ -1,0 +1,73 @@
+                <table class="box_width_left" border="0" cellpadding="0" cellspacing="0">
+                    <tbody><tr>
+                        <td>
+                    <!-- categories //-->
+                    
+                        <table class="infoBoxHeading_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody><tr>
+                            <td class="infoBoxHeading_l"><img src="index_files/infoBoxHeading_l.gif" alt="" border="0" width="2" height="2"></td>
+                            <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                            <td class="infoBoxHeading_td">Разделы</td>
+                            <td class="padd_vv"><img src="index_files/pixel_trans.gif" alt="" border="0" width="1" height="1"></td>
+                            <td class="infoBoxHeading_r"><img src="index_files/infoBoxHeading_r.gif" alt="" border="0" width="2" height="2"></td>
+                          </tr>
+                        </tbody></table>
+                        
+                          ~~mod mod_name="menu_v" action=""~
+                        
+                        </td>
+                    </tr>
+                    <!-- categories_eof //-->
+                    
+                    <!-- news //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="left/news.tpl"~
+                        
+                        </td>
+                    </tr>
+                    <!-- news_eof //-->
+
+                    <!-- contacts //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="left/contacts.tpl"~
+                            
+                      </td>
+                    </tr>
+                    <!-- contacts_eof //-->
+                    
+                    <!-- whats_new //-->
+                    <tr>
+                      <td>
+                      
+                            ~~include file="left/whats_new.tpl"~
+                            
+                      </td>
+                    </tr>
+                    <!-- whats_new_eof //-->
+                    <!-- information_pages //-->
+                    <tr>
+                      <td>
+                      
+                            ~~*include file="left/information_pages.tpl"*~
+
+                        </td>
+                    </tr>
+                    <!-- information_pages_eof //-->
+                    <!-- downloads //-->
+                    <!-- downloads_eof //-->
+                    <!-- polls //-->
+                    <tr>
+                      <td>
+                      
+                            ~~*include file="left/polls.tpl"*~
+                            
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="banner_03">&nbsp;</td>
+                    </tr>
+                  </tbody></table>
