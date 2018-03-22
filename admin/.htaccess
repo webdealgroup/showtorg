@@ -1,0 +1,5 @@
+AuthName "VIP Users" 
+AuthType Basic
+AuthUserFile /var/www/vhosts/x-light.by/httpdocs/god/.htpasswd
+require valid-user 
+ 
