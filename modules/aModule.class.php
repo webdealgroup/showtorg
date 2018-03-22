@@ -1,7 +1,7 @@
 <?php
 
 
-//include_once('lib/JSON.php');
+include_once('lib/JSON.php');
 
 class aModule{
 

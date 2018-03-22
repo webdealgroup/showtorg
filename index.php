@@ -10,7 +10,7 @@
 
 	$post 	= ($_SERVER["REQUEST_METHOD"] == "POST")? $_POST	: $_GET;
 
-	$post["page"] = !isset($post["page"]) ? "10269" : $post["page"];
+	$post["page"] = !isset($post["page"]) ? "index" : $post["page"];
 	$post["action"] = !isset($post["action"]) ? "" : $post["action"];
 	$post["lng"] = !isset($post["lng"]) ? "home" : $post["lng"];
 	$post["page_id"] = !isset($post["page_id"]) ? "0" : $post["page_id"];

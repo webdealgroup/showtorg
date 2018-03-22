@@ -58,7 +58,7 @@ class items extends aModule
 					 WHERE hide = 1 AND tree.id NOT IN (SELECT parent_id FROM tree)
 					 GROUP BY tree.id");
 
-//echo "<pre>";print_r($arr['node']);echo "<pre>";//die();
+echo "<pre>";print_r($arr['node']);echo "<pre>";//die();
 
 		foreach($data as $k=>$v)
 		{
