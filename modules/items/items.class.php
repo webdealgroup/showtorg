@@ -9,13 +9,15 @@ class items extends aModule
 
 	function execute($arr)
 	{
-		//echo "<pre>";print_r($arr);echo "<pre>";die();
+		
 		if ($arr['node']=="") {$arr['node']=$arr['send_params']['page'];}
 
 		$Page = new Page();
 		$i = $arr['node'];
 		$remark = array();
 		$path = ""; 
+
+		//echo "12345678<pre>";print_r($arr);echo "<pre>";die();
 		
 		if ($i == 1) 
 		{
@@ -31,7 +33,7 @@ class items extends aModule
 				$i = $node[0]['parent_id'];
 			} 
 		}
-		
+
 		//$path = "/1/".$path;
 		$path = $arr['send_params']['page'];
 

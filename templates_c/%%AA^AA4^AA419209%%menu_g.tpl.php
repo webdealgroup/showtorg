@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2018-03-22 12:29:43
+<?php /* Smarty version 2.6.11, created on 2018-03-22 13:28:38
          compiled from menu_g/menu_g.tpl */ ?>
                                 <li>
                                     <a href="/">Главная</a>
