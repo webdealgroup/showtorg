@@ -1700,7 +1700,7 @@
               <div class="catalog-items">
                 <div class="catalog-items__header">
                   <div class="catalog-items__header-left">
-                    <div class="catalog-items__title title h1">Звуковое оборудование</div> <span class="catalog-items__count">786 товаров</span> </div>
+                    <div class="catalog-items__title title h1">Каталог</div> <span class="catalog-items__count">786 товаров</span> </div>
                   <div class="catalog-items__header-right">
                     <div class="catalog-items__actions">
                       <div class="catalog-items__actions-filter"> <button type="button" class="catalog-items__filter-btn btn btn--icon btn--vinous js-catalog-filters-toggle">
