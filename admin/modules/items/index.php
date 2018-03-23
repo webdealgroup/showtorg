@@ -23,8 +23,10 @@ if ($_POST['task'] == 'getData') {
     $sql = "SELECT * FROM items ".$where." ORDER BY ".$orderby;
 		foreach ($data as $k => $v)
 		{
-			$r= rows("SELECT * FROM description WHERE id = ".$data[$k]["id"]." ");
-			$data[$k]["param"] = $r[0]["description"];
+			$data[$k]['title'] = str_replace("'", "`", $data[$k]['title']); 
+
+			//$r= rows("SELECT * FROM description WHERE id = ".$data[$k]["id"]." ");
+			//$data[$k]["param"] = $r[0]["description"];
 		}
 
 	list($counter) = row("SELECT COUNT(*) as count FROM ".$_POST['table']."",'array');

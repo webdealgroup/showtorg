@@ -1,4 +1,4 @@
-Ext.BLANK_IMAGE_URL = '/god/images/s.gif'; 
+Ext.BLANK_IMAGE_URL = '/admin/images/s.gif'; 
 
 MyDesktop = new Ext.app.App({
 	init :function(){
