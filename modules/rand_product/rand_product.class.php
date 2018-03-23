@@ -30,8 +30,12 @@ class rand_product extends aModule
 
         
         
-		$query="SELECT * FROM items WHERE hide <> 0 AND image NOT LIKE '' AND (qty > 0 AND qty IS NOT NULL) GROUP BY items.id ORDER BY RAND() ";
-		$query.=" LIMIT 0, 16";
+		//$query="SELECT * FROM items WHERE hide <> 0 AND image NOT LIKE '' AND (qty > 0 AND qty IS NOT NULL) GROUP BY items.id ORDER BY RAND() ";
+        $query="SELECT * FROM items ORDER BY RAND() ";
+        
+        $query.=" LIMIT 0, 16";
+
+
 		$res=rows($query);
 
 
