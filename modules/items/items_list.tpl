@@ -41,7 +41,7 @@
                         </div>
                         <div class="item-grid__actions">
                           <div class="item-grid__actions-left">
-                            <span class="price">70 р.</span>
+                            <span class="price">~~$i.cost~ р.</span>
                           </div>
                           <div class="item-grid__actions-right">
                             <a href="#" class="js-cart-add cart-btn "></a><a href="#" class="js-fav-add fav-btn "></a>
