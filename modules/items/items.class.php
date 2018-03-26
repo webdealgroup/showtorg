@@ -97,7 +97,7 @@ class items extends aModule
         $pager['num'] = $num;
         $pager['page'] = $page;
 
-        $root_url="/?page=".$arr['send_params']['page'];
+        $root_url="?page=".$arr['send_params']['page'];
         $pager['root_url'] = $root_url;
 
         while($page<$num)
