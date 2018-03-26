@@ -60,69 +60,105 @@ class items extends aModule
 
 	function show_items($arr, $remark, $path, $currency, $query)
 	{
-		$pn = (isset($arr['send_params']['pn']) && strlen($arr['send_params']['pn']) > 0) ? $arr['send_params']['pn'] : 1;
-		$listview = (isset($arr['send_params']['listview']) && strlen($arr['send_params']['listview']) > 0) ? $arr['send_params']['listview'] : 0;
-		//$s=$arr['send_params']['s'];
-		//$gn=$arr['send_params']['gn'];
-		$sortby = (isset($arr['send_params']['sortby']) && strlen($arr['send_params']['sortby'])) ? $arr['send_params']['sortby'] : '';
-		$dir = (isset($arr['send_params']['dir']) && strlen($arr['send_params']['dir'])) ? $arr['send_params']['dir'] : 'asc';
+        $s=$arr['send_params']['s'];
+        $gn=$arr['send_params']['gn'];
+        $all=$arr['send_params']['all'];
 
-		$query_string = $_SERVER["QUERY_STRING"];
-		@parse_str($query_string, $q_arr);
+        $query="SELECT * FROM items WHERE node = ".$arr['node']." ORDER BY sort ASC ";
+        //echo $query;
+        //$res=$this->executeDBQuery($query. " ORDER BY sort ASC ");
 
 
+        $_SESSION['smarty']->assign('count_list',count($res));
+
+//page
+        $num_disp=16;
+        $group_num=0;
+        $page_start=0;
+        $page_long=10;
+
+        if (isset($s) && strlen($s)>0)
+        {
+            $page_start=$s;
+            $group_num=$gn;
+        }
+
+        $n = count($res);
+
+//=======================
+        $list = "&nbsp;";
+        $num = $n;
+        $num = $num / $page_long;
+        $page=$group_num*$num_disp;
+
+        $root_url="index.php?page=".$arr['send_params']['page'];
+
+        while($page<$num)
+        {
+            $list .="|&nbsp;<a href='".$root_url."&s=".$page*$page_long."&gn=".$group_num ;
+            $list .="' target='_self'>";
+
+            if ($page==($page_start / $page_long) && $all!=1)
+            { $list .="<font color=\"#FF0000\">";}
+
+            $list .=$page+1;
+
+            if ($page==($page_start / $page_long) && $all!=1)
+            { $list .="</font>";}
+            $list .="</a>&nbsp;";
+            $page++;
+
+            if (is_int($page/(($group_num+1)*$num_disp)))
+            {
+                break;
+            }
+        }
+
+        $list .="";
+
+        if ($s > 0)
+        {   // (120/8-1)*8 < (15*8*1)   112<120
+            if (($s/$page_long-1)*$page_long < ($num_disp*$page_long*$group_num)) {$gr2=$group_num-1;}else{$gr2=$group_num;}
+            $list .="&nbsp;<a href='".$root_url."&s=".($s/$page_long-1)*$page_long."&gn=".$gr2 ;
+            $list .="' target='_self'><<</a>&nbsp;";
+        }
+
+        if (($s/$page_long+1)*$page_long < $n && $all!=1)
+        {      // (112/8+1)*8 > (8*15+15*8*0)-1    120 > 119
+            if (($s/$page_long+1)*$page_long > ($page_long*$num_disp+$num_disp*$page_long*$group_num)-1) {$gr2=$group_num+1;}else{$gr2=$group_num;}
+            $list .="&nbsp;<a href='".$root_url."&s=".($s/$page_long+1)*$page_long."&gn=".$gr2 ;
+            $list .="' target='_self'>>> Далее ..</a>&nbsp;";
+        }
+
+        if ($group_num > 0)
+        {
+            $list .="&nbsp;<a href='".$root_url."&s=".($page_long*$num_disp*($group_num - 1))."&gn=".($group_num - 1) ;
+            $list .="' target='_self'> ".$num_disp." <<</a>&nbsp;";
+        }
+
+        if ($n > ($page_long*$num_disp+1+$num_disp*$page_long*$group_num))
+        {
+            $list .="&nbsp;<a href='".$root_url."&s=".($page_long*$num_disp*($group_num + 1))."&gn=".($group_num + 1) ;
+            $list .="' target='_self'>>> ".$num_disp." </a>&nbsp;";
+        }
+        if ($n > $page_long)
+        {
+            if ($all!=1) {$list .="&nbsp; <a href='".$root_url."&all=1'> Показать все </a>&nbsp;";}
+            else {$list .="&nbsp; <a href='".$root_url."&all=1'> <font color='#FF0000'>Показать все</font> </a>&nbsp;";}
+        }
 
 
-		$order_by_query = ' ORDER BY  cost ASC, name ASC ';
-		$page_view_block = '<table width="100%" cellspacing="0" cellpadding="0" class="page_view"><tbody><tr><td width="250" class="sortby">Сортировать по: ';
-		unset ($q_arr['dir']);
-		if ($sortby == 'price')
-		{
-            $order_by_query = '';
-            
-			if ($dir == 'desc')
-			{
-				$order_by_query .= " ORDER BY items.cost DESC, items.name ASC";
-				$q_arr['dir'] = 'asc';
-			}
-			else
-			{
-				$order_by_query .= " ORDER BY items.cost ASC, items.name ASC";
-				$q_arr['dir'] = 'desc';
-			}
-		}
-		$q_arr['sortby'] = 'price';
-		$page_view_block .= '<a href="/?' . @http_build_query($q_arr) . '" class="' . (isset($q_arr['dir']) ? $q_arr['dir'] . ' active' : '') . '">Цене</a>';
-		unset ($q_arr['dir']);
-		if ($sortby == 'name')
-		{
-            $order_by_query = '';
-			$q_arr['sortby'] = 'name';
-			if ($dir == 'desc')
-			{
-				$order_by_query .= " ORDER BY items.name DESC";
-				$q_arr['dir'] = 'asc';
-			}
-			else
-			{
-				$order_by_query .= " ORDER BY items.name ASC";
-				$q_arr['dir'] = 'desc';
-			}
-		}
-		$q_arr['sortby'] = 'name';
-		$page_view_block .= '<a href="/?' . @http_build_query($q_arr) . '" class="' . (isset($q_arr['dir']) ? $q_arr['dir'] . ' active' : '') . '">Названию</a>';
-		if (strlen($order_by_query) == 0)
-			$order_by_query .= " ORDER BY items.cost ASC";
-		$query .= $order_by_query;
+//============
 
-		$res = rows($query);
-		$_SESSION['smarty']->assign('count',count($res));
+        if ($all!=1) $query.=" LIMIT ".$page_start.", ".$page_long;
 
-		$res = rows($query);
+        $res = rows($query);
 
-		$_SESSION['smarty']->assign('items',$res);
-		//$_SESSION['smarty']->assign('list',$list);
-	}
+        $_SESSION['smarty']->assign('items',$res);
+        $_SESSION['smarty']->assign('list',$list);
+
+
+    }
 }
 
 ?>
