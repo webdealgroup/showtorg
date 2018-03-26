@@ -3064,7 +3064,7 @@
 
                 ~~mod mod_name="items" action="catalog"~
 
-                
+
                 <div class="items items--highlight">
                   <div class="items__header">
                     <div class="items__title">
