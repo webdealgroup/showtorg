@@ -64,18 +64,17 @@ class items extends aModule
         $gn=$arr['send_params']['gn'];
         $all=$arr['send_params']['all'];
 
-        $query="SELECT * FROM items WHERE node = ".$arr['node']." ORDER BY sort ASC ";
-        //echo $query;
-        //$res=$this->executeDBQuery($query. " ORDER BY sort ASC ");
+
+        $res = rows($query);
 
 
         $_SESSION['smarty']->assign('count_list',count($res));
 
 //page
-        $num_disp=16;
+        $num_disp=5;
         $group_num=0;
         $page_start=0;
-        $page_long=10;
+        $page_long=16;
 
         if (isset($s) && strlen($s)>0)
         {
