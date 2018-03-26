@@ -48,7 +48,7 @@ class items extends aModule
 			$where .= ", ".$conditions[$k];
 		}
 
-		$query="SELECT * FROM items WHERE  node IN (".$where.") ";
+		$query="SELECT * FROM items WHERE  active = 1 AND node IN (".$where.") ";
 
 		$this->show_items($arr, $remark, $path, $currency, $query); 
 

@@ -23,7 +23,7 @@ class rand_product extends aModule
         $_SESSION['smarty']->assign('showing',$res[0]['value']);
 
 
-		$query="SELECT * FROM items WHERE hide <> 0 GROUP BY items.id ";
+		$query="SELECT * FROM items WHERE  active = 1  ";
 		$result=rows($query);
         $num_items = count($result);
         $_SESSION['smarty']->assign('num_items', $num_items);
@@ -31,7 +31,7 @@ class rand_product extends aModule
         
         
 		//$query="SELECT * FROM items WHERE hide <> 0 AND image NOT LIKE '' AND (qty > 0 AND qty IS NOT NULL) GROUP BY items.id ORDER BY RAND() ";
-        $query="SELECT * FROM items ORDER BY RAND() ";
+        $query="SELECT * FROM items WHERE  active = 1  ORDER BY RAND() ";
         
         $query.=" LIMIT 0, 16";
 
