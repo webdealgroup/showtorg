@@ -3067,6 +3067,7 @@
 
 
                 </div>
+
                 <div class="catalog-items__nav">
                   <div class="catalog-items__nav-pagination">
                     <div class="pager">

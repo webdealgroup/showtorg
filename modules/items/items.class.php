@@ -67,14 +67,18 @@ class items extends aModule
 
         $res = rows($query);
 
-
-        $_SESSION['smarty']->assign('count_list',count($res));
-
+        $pager = array();
+        $pager['count_rows'] = count($res);
 //page
         $num_disp=5;
         $group_num=0;
         $page_start=0;
         $page_long=16;
+
+        $pager['num_disp'] = $num_disp;
+        $pager['group_num'] = $group_num;
+        $pager['page_start'] = $page_start;
+        $pager['page_long'] = $page_long;
 
         if (isset($s) && strlen($s)>0)
         {
@@ -82,19 +86,31 @@ class items extends aModule
             $group_num=$gn;
         }
 
-        $n = count($res);
+        $n = $pager['count_rows'];
 
 //=======================
-        $list = "&nbsp;";
+        $list = "";
         $num = $n;
         $num = $num / $page_long;
         $page=$group_num*$num_disp;
 
-        $root_url="index.php?page=".$arr['send_params']['page'];
+        $pager['num'] = $num;
+        $pager['page'] = $page;
+
+        $root_url="/?page=".$arr['send_params']['page'];
+        $pager['root_url'] = $root_url;
 
         while($page<$num)
         {
-            $list .="|&nbsp;<a href='".$root_url."&s=".$page*$page_long."&gn=".$group_num ;
+            $pager['urls'][] = array(
+                                        'href' => $root_url,
+                                        's' => ($page*$page_long) ,
+                                        'gn' => $group_num,
+                                        'content' => ($page+1),
+                                        'current' => ($page==($page_start / $page_long) && $all!=1)?'1':'0'
+                );
+
+            $list .="|&nbsp;<a href='".$root_url."&s=".($page*$page_long)."&gn=".$group_num ;
             $list .="' target='_self'>";
 
             if ($page==($page_start / $page_long) && $all!=1)
@@ -120,6 +136,14 @@ class items extends aModule
             if (($s/$page_long-1)*$page_long < ($num_disp*$page_long*$group_num)) {$gr2=$group_num-1;}else{$gr2=$group_num;}
             $list .="&nbsp;<a href='".$root_url."&s=".($s/$page_long-1)*$page_long."&gn=".$gr2 ;
             $list .="' target='_self'><<</a>&nbsp;";
+
+            $pager['prev'] = array(
+                'href' => $root_url,
+                's' => (($s/$page_long-1)*$page_long) ,
+                'gn' => (($s/$page_long-1)*$page_long < ($num_disp*$page_long*$group_num))?($group_num-1):$group_num,
+                'content' => '<<',
+                'current' => 0
+            );
         }
 
         if (($s/$page_long+1)*$page_long < $n && $all!=1)
@@ -127,23 +151,55 @@ class items extends aModule
             if (($s/$page_long+1)*$page_long > ($page_long*$num_disp+$num_disp*$page_long*$group_num)-1) {$gr2=$group_num+1;}else{$gr2=$group_num;}
             $list .="&nbsp;<a href='".$root_url."&s=".($s/$page_long+1)*$page_long."&gn=".$gr2 ;
             $list .="' target='_self'>>> Далее ..</a>&nbsp;";
+
+            $pager['next'] = array(
+                'href' => $root_url,
+                's' => (($s/$page_long+1)*$page_long) ,
+                'gn' => (($s/$page_long+1)*$page_long > ($page_long*$num_disp+$num_disp*$page_long*$group_num)-1)?($group_num+1):$group_num,
+                'content' => '>> Далее ..',
+                'current' => '0'
+            );
         }
 
         if ($group_num > 0)
         {
             $list .="&nbsp;<a href='".$root_url."&s=".($page_long*$num_disp*($group_num - 1))."&gn=".($group_num - 1) ;
             $list .="' target='_self'> ".$num_disp." <<</a>&nbsp;";
+
+            $pager['prev_urls'] = array(
+                'href' => $root_url,
+                's' => ($page_long*$num_disp*($group_num - 1)) ,
+                'gn' => ($group_num - 1),
+                'content' => $num_disp." <<" ,
+                'current' => '0'
+            );
         }
 
         if ($n > ($page_long*$num_disp+1+$num_disp*$page_long*$group_num))
         {
             $list .="&nbsp;<a href='".$root_url."&s=".($page_long*$num_disp*($group_num + 1))."&gn=".($group_num + 1) ;
             $list .="' target='_self'>>> ".$num_disp." </a>&nbsp;";
+
+            $pager['next_urls'] = array(
+                'href' => $root_url,
+                's' => ($page_long*$num_disp*($group_num + 1)) ,
+                'gn' => ($group_num + 1),
+                'content' => ">> ".$num_disp,
+                'current' => '0'
+            );
         }
         if ($n > $page_long)
         {
             if ($all!=1) {$list .="&nbsp; <a href='".$root_url."&all=1'> Показать все </a>&nbsp;";}
             else {$list .="&nbsp; <a href='".$root_url."&all=1'> <font color='#FF0000'>Показать все</font> </a>&nbsp;";}
+
+            $pager['all_items'] = array(
+                'href' => $root_url,
+                's' => '' ,
+                'gn' => '',
+                'content' => 'Показать все',
+                'current' => '2'
+            );
         }
 
 
@@ -154,7 +210,7 @@ class items extends aModule
         $res = rows($query);
 
         $_SESSION['smarty']->assign('items',$res);
-        $_SESSION['smarty']->assign('list',$list);
+        $_SESSION['smarty']->assign('pager',$pager);
 
 
     }
