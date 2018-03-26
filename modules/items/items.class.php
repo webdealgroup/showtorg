@@ -9,105 +9,51 @@ class items extends aModule
 
 	function execute($arr)
 	{
-		
+
 		if ($arr['node']=="") {$arr['node']=$arr['send_params']['page'];}
+        $node = $arr['node'];
 
-		$Page = new Page();
-		$i = $arr['node'];
-		$remark = array();
-		$path = ""; 
+        $res = rows("SELECT * FROM tree WHERE id !=1"); // берем все ветки без корневой
+        $tree = array();
+        // расставить ключи в массиве tree
+        foreach($res as $k=>$v) $tree[$res[$k]['id']] = $v;
 
-		//echo "12345678<pre>";print_r($arr);echo "<pre>";die();
-		
-		if ($i == 1) 
-		{
-			$node = $Page->getNode($i);
-			$remark[] = array('title'=>$node[0]['title'], 'url'=>$node[0]['id']);
-		}
-		else{
-			while ($i != 1)
-			{
-				$node = $Page->getNode($i);
-				$path = $node[0]['id']."/".$path;
-				$remark[] = array('title'=>$node[0]['title'], 'url'=>$node[0]['id']);
-				$i = $node[0]['parent_id'];
-			} 
-		}
+        // для каждой записи делаем цикл восхождения до корневого узла
+        $conditions = array();
 
-		//$path = "/1/".$path;
-		$path = $arr['send_params']['page'];
-
-		$_SESSION['smarty']->assign('remark',array_reverse($remark));
-		$_SESSION['smarty']->assign('path',$path);
-
-		$query="SELECT * FROM currency WHERE id = 1 ";
-		$res=rows($query);
-        $_SESSION['smarty']->assign('currency',$res[0]['value']);
-        $currency = $res[0]['value'];
-
-		$query="SELECT * FROM currency WHERE id = 2 ";
-		$res=rows($query);
-        $_SESSION['smarty']->assign('showing',$res[0]['value']);
-
-
-
-		$condition = array();
-		$data = rows("SELECT tree.id, MAX(items.hide) AS hide 
-					 FROM  items RIGHT JOIN  tree
-						ON (items.node = tree.id) 
-					 WHERE hide = 1 AND tree.id NOT IN (SELECT parent_id FROM tree)
-					 GROUP BY tree.id");
-
-//echo "<pre>";print_r($arr['node']);echo "<pre>";die();
-
-		foreach($data as $k=>$v)
-		{
-		   $i = $data[$k]['id'];
-		   do                           // для каждой записи делаем цикл восхождения до корневого узла
-		   {   
-			   if ($i==$arr['node']) {$condition[] = $data[$k]['id']; break;}
-			   $d = rows("SELECT parent_id FROM tree WHERE id = ".$i);
-               
-                //echo "<pre>";print_r($d);echo "<pre>";//die();
-
-			   $i = $d[0]['parent_id'];
-		   } while ($i != 1);
-		}
-
-//echo "<pre>";print_r($condition);echo "<pre>";//die();
-
+        foreach($tree as $k=>$v)
+        {
+            $id = $tree[$k]['id']; // берем текущий id в дереве
+            $tmp = array();
+            do
+            {
+                $tmp[] = $id; // пишем его во временный массив
+                $parent_id = $tree[$id]['parent_id']; // определяем родителя
+                if ($parent_id == $node) // если родитель наш узел, то добавляем в условие
+                {
+                    $conditions = array_merge($conditions, $tmp);
+                    break; // и покидаем цикл do while
+                }
+                else
+                {
+                    $id = $parent_id; // переопределяем i на родителя
+                }
+            }while($parent_id != 1);
+        }
 
 		$where = $arr['node'];//"1"; // корневой узел включаем в выборку !!!!
 		$i = 0;
-		foreach($condition as $k=>$v)
+		foreach($conditions as $k=>$v)
 		{
-			//if ($i==0) {$where =$condition[$k]; $i++; continue;}
-			//if ($i==0) {$where =$arr['node']; $i++; continue;}  // корневой узел включаем в выборку !!!!
-			$where .= ", ".$condition[$k];
+			$where .= ", ".$conditions[$k];
 		}
-
-//echo "<pre>";print_r($where);echo "<pre>";//die();
-
 
 		$query="SELECT * FROM items WHERE  node IN (".$where.") ";
 
-
-//echo "<pre>";print_r($query);echo "<pre>";//die();
-
-        $list_nodes = $Page->getMenuNodes($arr['node']);
-
-		$_SESSION['smarty']->assign('list_nodes',$list_nodes);
-        
 		$this->show_items($arr, $remark, $path, $currency, $query); 
-        
-        $node = $Page->getNode($arr['node']);
-        $_SESSION['smarty']->assign('page_title',$node[0]["title"]);
-        $_SESSION['smarty']->assign('page_image',$node[0]["image"]);
-        $_SESSION['smarty']->assign('page_content',$node[0]["content"]);
-        
-		$_SESSION['smarty']->assign('page',$res[0]["title"]);
-		$_SESSION['smarty']->assign('content',$res[0]["content"]);
-		$_SESSION['smarty']->assign('page_id',$arr['send_params']['page']);
+
+        $_SESSION['smarty']->assign('tree',$tree);
+        $_SESSION['smarty']->assign('node',$node);
 
 		$this->mod_display($this->prot);
 	}
