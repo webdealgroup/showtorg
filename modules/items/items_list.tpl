@@ -1,5 +1,5 @@
                             ~~*debug*~
-123 
+
 ~~include file="cart/pop_up.tpl"~
 
 
@@ -12,7 +12,7 @@
                                 <div class="breadcrumbs">
                                     <ul>
                                         <li class="home">
-                                            <a href="http://x-light.by/" title="Go to Home Page">Главная</a>
+                                            <a href="/" title="Go to Home Page">Главная</a>
                                             <span>&nbsp;&gt;&nbsp; </span>
                                         </li>
                                         ~~foreach name="remark" from=$remark item=i~
@@ -20,7 +20,7 @@
                                             ~~if $smarty.foreach.remark.last~
                                             <strong>~~$i.title~</strong>
                                             ~~else~
-                                            <a href="http://x-light.by/?page=~~$i.url~" >~~$i.title~</a>
+                                            <a href="/?page=~~$i.url~" >~~$i.title~</a>
                                             <span>&nbsp;&gt;&nbsp; </span>
                                             ~~/if~
 
@@ -157,28 +157,21 @@ table.page_view * {
                     <div class="item-grid  js-item  js-item-grid ">
                       <div class="item-grid__inn">
                         <div class="item-grid__photo">
-                          <a href="#"><img alt="David Jones" class="item-grid__img js-item-main-img" src="catalogue/images/1051_thumb.jpg"></a>
+                          <a href="#"><img alt="David Jones" class="item-grid__img js-item-main-img" src="~~$i.image~"></a>
                           <div class="item-grid__carousel carousel">
                             <div class="swiper-container js-item-gallery-carousel">
                               <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                  <div data-color="#337ab7" class="item-grid__carousel-item js-item-carousel-image"><img alt="David Jones" src="catalogue/images/1051_thumb.jpg">
+                                  <div data-color="#337ab7" class="item-grid__carousel-item js-item-carousel-image"><img alt="David Jones" src="~~$i.image~">
                                   </div>
-                                  nophoto_thumb
+                                  
                                 </div>
-                                <div class="swiper-slide">
-                                  <div data-color="#56223f" class="item-grid__carousel-item js-item-carousel-image"><img alt="David Jones" src="catalogue/images/nophoto_thumb.jpg">
-                                  </div>
-                                </div>
-                                <div class="swiper-slide">
-                                  <div data-color="#FFA800" class="item-grid__carousel-item js-item-carousel-image"><img alt="David Jones" src="catalogue/images/nophoto_thumb.jpg">
-                                  </div>
-                                </div>
+
                               </div>
                             </div>
                           </div>
                         </div>
-                        <a href="#" class="item-grid__name">PROEL AT235</a>
+                        <a href="#" class="item-grid__name">~~$i.param~</a>
                         <div class="item-grid__category">
                           ~~$i.name~
                         </div>

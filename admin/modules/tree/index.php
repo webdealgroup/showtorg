@@ -159,7 +159,7 @@ case "getNode":
 
 
 	$node = isset($_POST['node']) ? intval($_POST['node']) : 0;
-	$nodes = rows("SELECT id, name, title as text, parent_id, tpl, status FROM tree WHERE parent_id='".$node."' ORDER BY title, sort ASC");//AND status = 2 ORDER BY sort ASC");
+	$nodes = rows("SELECT id, name, title as text, parent_id, tpl, status FROM tree WHERE parent_id='".$node."' ORDER BY sort ASC");//AND status = 2 ORDER BY sort ASC");
     
 	//echo "<pre>"; print_r($nodes); echo "</pre>";  die();
     

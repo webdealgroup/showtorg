@@ -89,7 +89,7 @@ class items extends aModule
 //echo "<pre>";print_r($where);echo "<pre>";//die();
 
 
-		$query="SELECT * FROM items WHERE  node IN (".$where.") GROUP BY items.id "; 
+		$query="SELECT * FROM items WHERE  node IN (".$where.") ";
 
 
 //echo "<pre>";print_r($query);echo "<pre>";//die();

@@ -19,8 +19,8 @@
                               </div>
                             </div>
                           </div>
-                        </div> <a href="#" class="item-grid__name">~~$i.name~</a>
-                        <div class="item-grid__category">Переходник RCA<->RCA</div>
+                        </div> <a href="#" class="item-grid__name">~~$i.param~</a>
+                        <div class="item-grid__category">~~$i.name~</div>
                         <div class="item-grid__meta">
                           <div class="item-grid__meta-left">
                             <div class="rate">
