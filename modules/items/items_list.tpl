@@ -66,7 +66,7 @@
                               <ul class="pagination">
 
                                   ~~foreach from=$pager.urls item=u~
-                                  <li class="pagination__item ~~if $u.current = 1~  is-active ~~/if~">
+                                  <li class="pagination__item ~~if $u.current == 1~  is-active ~~/if~">
                                       <a href="#" class="pagination__link">~~$u.content~</a>
                                   </li>
                                   ~~/foreach~
