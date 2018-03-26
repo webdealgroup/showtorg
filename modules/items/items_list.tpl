@@ -67,7 +67,7 @@
 
                                   ~~foreach from=$pager.urls item=u~
                                   <li class="pagination__item is-active">
-                                      <a href="#" class="pagination__link">~~$u.content</a>
+                                      <a href="#" class="pagination__link">~~$u.content~</a>
                                   </li>
                                   ~~/foreach~
 
@@ -85,12 +85,12 @@
                                           Результаты: ~~$pager.page_long~ из ~~$pager.count_rows~
                                       </div>
                                       <div class="pager__info-btn">
-                                          <a href="~~$pager.next.href~&s=~~$pager.next.s~&gn=~~$pager.next.gn~" class="next-btn">Следующая</a>
+                                          <a href="~~*$pager.next.href~&s=~~$pager.next.s~&gn=~~$pager.next.gn*~" class="next-btn">Следующая</a>
                                       </div>
                                   </div>
                               </div>
                           </div>
-                          <a href="~~$pager.next.href~&s=~~$pager.next.s~&gn=~~$pager.next.gn~" class="next-btn">Следующая</a>
+                          <a href="~~*$pager.next.href~&s=~~$pager.next.s~&gn=~~$pager.next.gn*~" class="next-btn">Следующая</a>
                       </div>
                       <!--div class="catalog-items__nav-more">
                           <a href="#" class="more-btn">Показать еще</a>
