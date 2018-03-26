@@ -1,6 +1,29 @@
 ﻿~~*debug*~
  
+                ~~foreach name=vmenu  from=$menu_v item=i~
+                  <li class="categories-menu__item categories-menu__item--sub">
+                    <div class="categories-menu__item-inn">
+                      <a href="/?page=~~$i.name~" class="categories-menu__link">~~$i.title~</a>
+                    </div>
+                    ~~if $i.submenu[0].title !=''~
+                    <ul class="categories-menu__sub">
+                      ~~foreach name=vsubmenu  from=$i.submenu item=s~
+                      <li class="categories-menu__item">
+                        <div class="categories-menu__item-inn">
+                          <a href="/?page=~~$s.name~" class="categories-menu__link">~~$s.title~</a>
+                        </div>
+                      </li>
+                      ~~/foreach~
+                    </ul>
+                    ~~/if~
+                  </li>
+                ~~/foreach~
 
+
+
+                            
+                            
+~~*    
                                 <ul id="nav">
                                     
                                     ~~foreach name=vmenu  from=$menu_v item=i~
@@ -36,9 +59,7 @@
 
                                     
                                 </ul>
-                            
-                            
-~~*                            
+
         <div class="box-category">
             <ul>
                 

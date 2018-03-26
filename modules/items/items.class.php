@@ -58,7 +58,7 @@ class items extends aModule
 					 WHERE hide = 1 AND tree.id NOT IN (SELECT parent_id FROM tree)
 					 GROUP BY tree.id");
 
-echo "<pre>";print_r($arr['node']);echo "<pre>";//die();
+//echo "<pre>";print_r($arr['node']);echo "<pre>";die();
 
 		foreach($data as $k=>$v)
 		{
@@ -89,7 +89,7 @@ echo "<pre>";print_r($arr['node']);echo "<pre>";//die();
 //echo "<pre>";print_r($where);echo "<pre>";//die();
 
 
-		$query="SELECT * FROM items WHERE hide <> 0 AND node IN (".$where.") GROUP BY items.id "; 
+		$query="SELECT * FROM items WHERE  node IN (".$where.") GROUP BY items.id "; 
 
 
 //echo "<pre>";print_r($query);echo "<pre>";//die();
