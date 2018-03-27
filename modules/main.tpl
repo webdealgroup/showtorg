@@ -2112,631 +2112,279 @@
                     </div>
                     <div class="catalog-items__filters-list">
                       <div class="catalog-items__filters-items">
-                        <div class="catalog-items__filters-item">
-                          <div class="catalog-items__filters-row js-filter-label">
-                            Материал
-                          </div>
-                          <div class="filter js-filter">
-                            <div class="filter__inn">
-                              <div data-many='["материал", "материала", "материалов"]' class="filter__label js-filter-toggle">
-                                Материал
+                          <div class="catalog-items__filters-item">
+                              <div class="catalog-items__filters-row js-filter-label">
+                                  Цена
                               </div>
-                            </div>
-                            <div class="filter__dropdown">
-                              <div class="filter__scroll js-custom-scroll">
-                                <div class="filter__checkboxes">
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          однотонный
-                                        </div>
-                                      </div> </label>
+                              <div class="filter js-filter">
+                                  <div class="filter__inn">
+                                      <div class="filter__label js-filter-toggle">
+                                          Цена
+                                      </div>
                                   </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          рисунки и надписи
-                                        </div>
-                                      </div> </label>
+                                  <div class="filter__dropdown filter__dropdown--lg">
+                                      <div class="input-range">
+                                          <div class="input-range__label">
+                                              от
+                                          </div>
+                                          <div>
+                                              <input data-type="from" type="text" class="input-range__input">
+                                          </div>
+                                          <div class="input-range__label">
+                                              до
+                                          </div>
+                                          <div>
+                                              <input data-type="to" type="text" class="input-range__input">
+                                          </div>
+                                          <div class="input-range__label">
+                                              руб.
+                                          </div>
+                                      </div>
+                                      <input data-step="1000" data-min="1000" data-max="1000000" class="js-range-slider" type="text" />
+                                      <button type="submit" class="btn btn--sm btn--pink js-filter-append">
+                                          Применить
+                                      </button>
                                   </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          геометрия
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          животные
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          полоска
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          леопардовый
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          другое
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          цветочный
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          эмбиентовый
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          хаотичный
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          винтажный
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                </div>
                               </div>
-                              <button type="submit" class="btn btn--sm btn--pink js-filter-append">
-                                Применить
-                              </button>
-                            </div>
                           </div>
-                        </div>
-                        <div class="catalog-items__filters-item">
-                          <div class="catalog-items__filters-row js-filter-label">
-                            Цвет
-                          </div>
-                          <div class="filter js-filter">
-                            <div class="filter__inn">
-                              <div data-many='["цвет", "цвета", "цветов"]' class="filter__label js-filter-toggle">
-                                Цвет
+                          <div class="catalog-items__filters-item">
+                              <div class="catalog-items__filters-row js-filter-label">
+                                  Бренд
                               </div>
-                            </div>
-                            <div class="filter__dropdown">
-                              <div class="color-switchers">
-                                <div class="color-switchers__inn">
-                                  <label class="color-switchers__label">
-                                    <input type="checkbox" name="size" value="#ff343d">
-                                    <span style="background: #ff343d;" class="color-switchers__item">#ff343d</span> </label><label class="color-switchers__label">
-                                    <input type="checkbox" name="size" value="#1f1f1f">
-                                    <span style="background: #1f1f1f;" class="color-switchers__item">#1f1f1f</span> </label><label class="color-switchers__label">
-                                    <input type="checkbox" name="size" value="#444fdd">
-                                    <span style="background: #444fdd;" class="color-switchers__item">#444fdd</span> </label><label class="color-switchers__label">
-                                    <input type="checkbox" name="size" value="#eaeaea">
-                                    <span style="background: #eaeaea;" class="color-switchers__item">#eaeaea</span> </label>
-                                </div>
+                              <div class="filter js-filter">
+                                  <div class="filter__inn">
+                                      <div data-many='["бренд", "бренда", "брендов"]' class="filter__label js-filter-toggle">
+                                          Бренд
+                                      </div>
+                                  </div>
+                                  <div class="filter__dropdown">
+                                      <div class="filter__scroll js-custom-scroll">
+                                          <div class="filter__checkboxes">
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              David Jones
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Casio
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Salomon
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Coccinelle
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Tommy Hilfiger
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Jennyfer
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              RELYGHT Piquadro
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Baudet
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Fred Perry
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              David Jones
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Casio
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Salomon
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Coccinelle
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Tommy Hilfiger
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Jennyfer
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              RELYGHT Piquadro
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Baudet
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                              <div>
+                                                  <label class="checkbox checkbox--sm">
+                                                      <input type="checkbox" >
+                                                      <div>
+                                                          <div class="checkbox__i">
+                                                              <i></i>
+                                                          </div>
+                                                          <div>
+                                                              Fred Perry
+                                                          </div>
+                                                      </div> </label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <button type="submit" class="btn btn--sm btn--pink js-filter-append">
+                                          Применить
+                                      </button>
+                                  </div>
                               </div>
-                              <button type="submit" class="btn btn--sm btn--pink js-filter-append">
-                                Применить
-                              </button>
-                            </div>
                           </div>
-                        </div>
-                        <div class="catalog-items__filters-item">
-                          <div class="catalog-items__filters-row js-filter-label">
-                            Цена
-                          </div>
-                          <div class="filter js-filter">
-                            <div class="filter__inn">
-                              <div class="filter__label js-filter-toggle">
-                                Цена
-                              </div>
-                            </div>
-                            <div class="filter__dropdown filter__dropdown--lg">
-                              <div class="input-range">
-                                <div class="input-range__label">
-                                  от
-                                </div>
-                                <div>
-                                  <input data-type="from" type="text" class="input-range__input">
-                                </div>
-                                <div class="input-range__label">
-                                  до
-                                </div>
-                                <div>
-                                  <input data-type="to" type="text" class="input-range__input">
-                                </div>
-                                <div class="input-range__label">
-                                  руб.
-                                </div>
-                              </div>
-                              <input data-step="1000" data-min="1000" data-max="1000000" class="js-range-slider" type="text" />
-                              <button type="submit" class="btn btn--sm btn--pink js-filter-append">
-                                Применить
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="catalog-items__filters-item">
-                          <div class="catalog-items__filters-row js-filter-label">
-                            Размер
-                          </div>
-                          <div class="filter js-filter">
-                            <div class="filter__inn">
-                              <div class="filter__label js-filter-toggle">
-                                Размер
-                              </div>
-                            </div>
-                            <div class="filter__dropdown filter__dropdown--lg">
-                              <div class="input-range">
-                                <div class="input-range__label">
-                                  от
-                                </div>
-                                <div>
-                                  <input data-type="from" type="text" class="input-range__input">
-                                </div>
-                                <div class="input-range__label">
-                                  до
-                                </div>
-                                <div>
-                                  <input data-type="to" type="text" class="input-range__input">
-                                </div>
-                              </div>
-                              <input data-step="1" data-min="25" data-max="60" class="js-range-slider" type="text" />
-                              <button type="submit" class="btn btn--sm btn--pink js-filter-append">
-                                Применить
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="catalog-items__filters-item">
-                          <div class="catalog-items__filters-row js-filter-label">
-                            Бренд
-                          </div>
-                          <div class="filter js-filter">
-                            <div class="filter__inn">
-                              <div data-many='["бренд", "бренда", "брендов"]' class="filter__label js-filter-toggle">
-                                Бренд
-                              </div>
-                            </div>
-                            <div class="filter__dropdown">
-                              <div class="filter__scroll js-custom-scroll">
-                                <div class="filter__checkboxes">
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          David Jones
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Casio
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Salomon
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Coccinelle
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Tommy Hilfiger
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Jennyfer
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          RELYGHT Piquadro
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Baudet
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Fred Perry
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          David Jones
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Casio
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Salomon
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Coccinelle
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Tommy Hilfiger
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Jennyfer
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          RELYGHT Piquadro
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Baudet
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div>
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          Fred Perry
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                </div>
-                              </div>
-                              <button type="submit" class="btn btn--sm btn--pink js-filter-append">
-                                Применить
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="catalog-items__filters-item">
-                          <div class="catalog-items__filters-row js-filter-label">
-                            Сезон
-                          </div>
-                          <div class="filter js-filter">
-                            <div class="filter__inn">
-                              <div data-many='["сезон", "сезона", "сезонов"]' class="filter__label js-filter-toggle">
-                                Сезон
-                              </div>
-                            </div>
-                            <div class="filter__dropdown">
-                              <div class="filter__scroll js-custom-scroll">
-                                <div class="filter__checkboxes">
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          летний
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          осенний
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          зимний
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          весеений
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                </div>
-                              </div>
-                              <button type="submit" class="btn btn--sm btn--pink js-filter-append">
-                                Применить
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="catalog-items__filters-item">
-                          <div class="catalog-items__filters-row js-filter-label">
-                            Стиль
-                          </div>
-                          <div class="filter js-filter">
-                            <div class="filter__inn">
-                              <div data-many='["стиль", "стиля", "стилей"]' class="filter__label js-filter-toggle">
-                                Стиль
-                              </div>
-                            </div>
-                            <div class="filter__dropdown">
-                              <div class="filter__scroll js-custom-scroll">
-                                <div class="filter__checkboxes">
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          молодежный
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          современный
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          футуристический
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                  <div class="filter__checkboxes-item">
-                                    <label class="checkbox checkbox--sm">
-                                      <input type="checkbox" >
-                                      <div>
-                                        <div class="checkbox__i">
-                                          <i></i>
-                                        </div>
-                                        <div>
-                                          винтажный
-                                        </div>
-                                      </div> </label>
-                                  </div>
-                                </div>
-                              </div>
-                              <button type="submit" class="btn btn--sm btn--pink js-filter-append">
-                                Применить
-                              </button>
-                            </div>
-                          </div>
-                        </div>
+
                       </div>
                     </div>
                     <div class="catalog-items__filters-clear">
