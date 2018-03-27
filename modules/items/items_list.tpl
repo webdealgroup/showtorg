@@ -4,7 +4,7 @@
                             <div class="catalog-items__title title h1">
                                 ~~$tree[$node].title~
                             </div>
-                            <span class="catalog-items__count">~~$pager.count_rows~ товаров</span>
+                            <span class="catalog-items__count">(товаров: ~~$pager.count_rows~)</span>
                         </div>
                         <div class="catalog-items__header-right">
                             <div class="catalog-items__actions">
