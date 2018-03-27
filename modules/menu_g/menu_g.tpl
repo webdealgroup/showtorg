@@ -1,18 +1,11 @@
-                                <li>
-                                    <a href="/">Главная</a>
-                                </li>
 
-                                                                                                                            
-                                                                                                                            ~~foreach name=tmenu  from=$menu_g item=i~
-                                <li>
-                                    <a href="/?mod_name=page&id=~~$i.name~">~~$i.title~</a>
-                                </li>
 
-                                                                                                                            ~~*if $smarty.foreach.tmenu.last != $smarty.foreach.tmenu.total~
+                <li>
+                    <a href="/">Главная</a>
+                </li>
 
-                                                                                                                            ~~/if*~
-                                                                                                                            ~~/foreach~
-
-                                           
-                                           
-                    
+                ~~foreach from=$menu_g item=m~
+                <li class="nav__item">
+                    <a class="nav__link " href="/?mod_name=page&id=~~$m.name~"><span>~~$m.title~</span></a>
+                </li>
+                ~~/foreach~
