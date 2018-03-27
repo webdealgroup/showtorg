@@ -2007,48 +2007,9 @@
             <div class="l-wrapper">
               <div class="nav__bar js-nav-bar"></div>
               <ul class="nav__list">
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Гитары</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Звуковое оборудование</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Клавишные инструменты</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Кабели и разъемы</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Чехлы, кейсы, сумки</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>DJ оборудование</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Микрофоны</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Духовые инструменты</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Наушники</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Световое оборудование</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Струнные инструменты</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Трансляционное оборудование</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Ударные инструменты</span></a>
-                </li>
-                <li class="nav__item js-catalog-toggle">
-                  <a class="nav__link nav__link--sub" href="#"><span>Аксессуары</span></a>
-                </li>
+
+                ~~mod mod_name="menu_g" action=""~
+
               </ul>
             </div>
           </nav>

@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f431cc-f818-4126-8fc0-f0bcaf3765fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/tpl/head.tpl" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%28^284^284729D4%%show_cart_short.tpl.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%45^45E^45E480CD%%index.tpl.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%4A^4A2^4A2D151F%%cart.tpl.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%6D^6D2^6D24CDF8%%db2%3A65.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%73^735^735238A0%%db2%3A71.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%AA^AA4^AA419209%%menu_g.tpl.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%CE^CE1^CE1A9833%%db%3Aindex.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%E7^E77^E77090A6%%search_form.tpl.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates_c/%%EA^EA5^EA5B691A%%db2%3A72.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/main.tpl" afterPath="$PROJECT_DIR$/modules/main.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/menu_g/menu_g.class.php" afterPath="$PROJECT_DIR$/modules/menu_g/menu_g.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/menu_g/menu_g.tpl" afterPath="$PROJECT_DIR$/modules/menu_g/menu_g.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/pages/pages.tpl" afterPath="$PROJECT_DIR$/modules/pages/pages.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates_c/%%AA^AA4^AA419209%%menu_g.tpl.php" afterPath="$PROJECT_DIR$/templates_c/%%AA^AA4^AA419209%%menu_g.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/index.tpl" afterPath="$PROJECT_DIR$/modules/index.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -52,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/pages/pages.tpl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -104,8 +99,8 @@
       <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/index.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="2011" column="0" lean-forward="true" selection-start-line="2011" selection-start-column="0" selection-end-line="2011" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,8 +109,8 @@
       <file leaf-file-name="main.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/main.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="2018" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3643" selection-end-column="7" />
+            <state relative-caret-position="195">
+              <caret line="2009" column="0" lean-forward="true" selection-start-line="2009" selection-start-column="0" selection-end-line="2011" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -147,6 +142,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>nav</find>
+      <find>nav__list</find>
+      <find>nav__item</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -163,6 +165,7 @@
         <option value="$PROJECT_DIR$/modules/main.tpl" />
         <option value="$PROJECT_DIR$/modules/menu_g/menu_g.class.php" />
         <option value="$PROJECT_DIR$/modules/pages/pages.tpl" />
+        <option value="$PROJECT_DIR$/modules/index.tpl" />
       </list>
     </option>
   </component>
@@ -292,7 +295,7 @@
       <updated>1522050258234</updated>
       <workItem from="1522050260088" duration="897000" />
       <workItem from="1522051379202" duration="3826000" />
-      <workItem from="1522055559159" duration="26156000" />
+      <workItem from="1522055559159" duration="26687000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1522065091913</created>
@@ -305,11 +308,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30879000" />
+    <option name="totallyTimeSpent" value="31410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19213313" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -321,7 +323,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1151" y="135" width="983" height="747" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1151" y="135" width="983" height="747" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -516,22 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/tpl/head.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/smarty/Smarty.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -569,34 +555,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1521715539427" expanded="true" signature="570:605" ph="SELECT * FRO... currency" />
-            <marker date="1521715539427" expanded="true" signature="698:733" ph="SELECT * FRO... currency" />
-            <marker date="1521715539427" expanded="true" signature="962:998" ph="SELECT name items" />
-            <marker date="1521715539427" expanded="true" signature="1712:1770" ph="SELECT * FRO... tree" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/pages/pages_.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/main.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="2018" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3643" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -620,6 +583,45 @@
             <element signature="n#style#0;n#span#0;n#label#3;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#main#0;n#div#0;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#198055#198061#0#HTML" expanded="true" />
             <element signature="e#225156#225162#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/tpl/head.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/main.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="2009" column="0" lean-forward="true" selection-start-line="2009" selection-start-column="0" selection-end-line="2011" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="2011" column="0" lean-forward="true" selection-start-line="2011" selection-start-column="0" selection-end-line="2011" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <marker date="1521715539427" expanded="true" signature="570:605" ph="SELECT * FRO... currency" />
+            <marker date="1521715539427" expanded="true" signature="698:733" ph="SELECT * FRO... currency" />
+            <marker date="1521715539427" expanded="true" signature="962:998" ph="SELECT name items" />
+            <marker date="1521715539427" expanded="true" signature="1712:1770" ph="SELECT * FRO... tree" />
           </folding>
         </state>
       </provider>
