@@ -6,14 +6,6 @@
         <a href="#" class="m-nav__link m-nav__location js-location-select-toggle"> <span>Город:</span> Москва </a>
 	</div>
 	<div class="m-nav__group">
-        <div class="m-nav__gender">
-			<div class="m-nav__gender-cell">
-				<a href="#" class="m-nav__gender-link is-active"> <i  class="ticon ticon-man "></i> Мужчинам</a>
-			</div>
-			<div class="m-nav__gender-cell">
-				<a href="#" class="m-nav__gender-link"> <i  class="ticon ticon-woman "></i> Женщинам</a>
-			</div>
-        </div>
         <div class="m-nav__catalog">
 			<div class="m-catalog js-m-catalog">
 				<ul class="m-catalog__list">
@@ -31,7 +23,7 @@
 							<svg class="icon icon-watch">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-watch"></use>
 							</svg>
-						</div> Часы </a>
+						</div> Световое оборудование </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="3" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -39,7 +31,7 @@
 							<svg class="icon icon-perfume">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-perfume"></use>
 							</svg>
-						</div> Парфюмерия </a>
+						</div> Музыкальные инструменты </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="4" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -47,7 +39,7 @@
 							<svg class="icon icon-belt">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-belt"></use>
 							</svg>
-						</div> Ремни </a>
+						</div> Трансляционное оборудование </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="5" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -55,7 +47,7 @@
 							<svg class="icon icon-purse">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-purse"></use>
 							</svg>
-						</div> Кошельки </a>
+						</div> DJ оборудование </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="6" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -63,7 +55,7 @@
 							<svg class="icon icon-glasses">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-glasses"></use>
 							</svg>
-						</div> Очки </a>
+						</div> Аксессуары  </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="7" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -71,7 +63,7 @@
 							<svg class="icon icon-suitcase">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-suitcase"></use>
 							</svg>
-						</div> Чемоданы </a>
+						</div> Кабели и разъемы </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="8" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -79,7 +71,7 @@
 							<svg class="icon icon-backpack">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-backpack"></use>
 							</svg>
-						</div> Рюкзаки </a>
+						</div> Микрофоны  </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="9" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -87,7 +79,7 @@
 							<svg class="icon icon-pen">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-pen"></use>
 							</svg>
-						</div> Ручки </a>
+						</div> Наушники </a>
 					</li>
 					<li class="m-catalog__item m-catalog__item--has-sub">
 						<a data-id="10" href="#" class="m-catalog__link m-catalog__link--icon js-m-catalog-link">
@@ -95,7 +87,7 @@
 							<svg class="icon icon-hanger">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#icon-hanger"></use>
 							</svg>
-						</div> Другой товар </a>
+						</div> Чехлы, кейсы, сумки </a>
 					</li>
 				</ul>
 			</div>

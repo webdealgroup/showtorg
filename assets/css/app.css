@@ -11994,7 +11994,7 @@ input:checked + * .lg-checkbox__icon {
   font-size: 15px;
   color: #ffffff;
   display: block;
-  height: 37px;
+  min-height: 37px;
   line-height: 37px;
   position: relative;
   padding: 0 10px;
