@@ -1,5 +1,5 @@
 <?php
-
+	echo "Отключено за неоплату"; die();
 	error_reporting(0);
 	session_start();
 
