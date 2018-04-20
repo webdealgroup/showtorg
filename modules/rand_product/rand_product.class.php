@@ -33,7 +33,7 @@ class rand_product extends aModule
 		//$query="SELECT * FROM items WHERE hide <> 0 AND image NOT LIKE '' AND (qty > 0 AND qty IS NOT NULL) GROUP BY items.id ORDER BY RAND() ";
         $query="SELECT * FROM items WHERE  active = 1  ORDER BY RAND() ";
         
-        $query.=" LIMIT 0, 16";
+        $query.=" LIMIT 0, 30";
 
 
 		$res=rows($query);
@@ -58,15 +58,13 @@ class rand_product extends aModule
             $res[$k]["dir"] = $path;
             
             
-            $doll = $res[$k][cost];
-            $res[$k]["doll"] = number_format($doll, 3, ',', ' ');  
+            //$doll = $res[$k][cost];
+            //$res[$k]["doll"] = number_format($doll, 3, ',', ' ');  
             
             
-            $credit = ($res[$k][cost]* $currency)/10;
-            if ($res[$k]["cost"] >300000 && $res[$k]["cost"] < 5000000) $res[$k]["credit"] = number_format($credit, 0, '', ' ');
-            /**/
+
             
-            $res[$k]["cost"] = number_format(round(($res[$k][cost] * $currency), 1), 2, ',', ' '); //round(($res[$k][cost] * $currency), 2);  
+            $res[$k]["cost"] = number_format(round(($res[$k][cost]), 1), 0, ',', ' '); //round(($res[$k][cost] * $currency), 2);  
             
             $q="SELECT * FROM description WHERE id = ".$res[$k]["id"]." ";
             $r=rows($q);

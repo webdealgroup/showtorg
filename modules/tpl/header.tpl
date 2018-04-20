@@ -22,9 +22,11 @@
 		  <div class="topbar__contacts">
 			<span class="topbar__phone">+7 495 104 70 03 (9:00 - 21:00)</span><a class="topbar__link topbar__link--dropdown" href="#"><span>Связаться с нами</span></a>
 		  </div>
-		  <div class="topbar__delivery">
+		  
+		  <!--div class="topbar__delivery">
 			<a class="topbar__link" href="#"> <i  class="ticon ticon-truck "></i> <span>Бесплатная доставка при первой покупке</span></a>
-		  </div>
+		  </div-->
+
 		  <div class="topbar__day-item">
 			<a class="topbar__link" href="#"> <i  class="ticon ticon-discount "></i> <span>Товар дня</span></a>
 		  </div>
@@ -98,11 +100,9 @@
 		  <div class="header__btn header__srch">
 			<a class="js-search-toggle" href="#"> <i  class="ticon ticon-loupe "></i> </a>
 		  </div>
-		  <div class="header__btn header__favorite">
-			<a class="js-favs" href="#"> <i  class="ticon ticon-favorite-fill "></i> <span class="header__favorite-count">99</span> </a>
-		  </div>
+
 		  <div class="header__btn header__cart dropdown">
-			<a class="js-dropdown-toggle js-cart" href="#"> <i  class="ticon ticon-cart "></i> <span class="header__cart-count">39</span> </a>
+			<a class="js-dropdown-toggle js-cart" href="#"> <i  class="ticon ticon-cart "></i> <span class="header__cart-count">0</span> </a>
 			<div class="dropdown__block cart-dropdown">
 			  <div class="cart-dropdown__items">
 				<div class="item-cart">

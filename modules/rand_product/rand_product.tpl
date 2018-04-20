@@ -3,25 +3,11 @@
                   <div class="catalog-items__cell">
                     <div class="item-grid  js-item  js-item-grid ">
                       <div class="item-grid__inn">
-                        <div class="item-grid__photo"> <a href="#"><img alt="David Jones" class="item-grid__img js-item-main-img" src="~~$i.image~"></a>
-                          <div class="item-grid__carousel carousel">
-                            <div class="swiper-container js-item-gallery-carousel">
-                              <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                  <div data-color="#337ab7" class="item-grid__carousel-item js-item-carousel-image"><img alt="David Jones" src="~~$i.image~"></div>nophoto_thumb
-                                </div>
-                                <!--div class="swiper-slide">
-                                  <div data-color="#56223f" class="item-grid__carousel-item js-item-carousel-image"><img alt="David Jones" src="catalogue/images/nophoto_thumb.jpg"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                  <div data-color="#FFA800" class="item-grid__carousel-item js-item-carousel-image"><img alt="David Jones" src="catalogue/images/nophoto_thumb.jpg"></div>
-                                </div-->
-                              </div>
-                            </div>
-                          </div>
+                        <div class="item-grid__photo"> <a href="?mod_name=item&&id=~~$i.id~"><img alt="David Jones" class="item-grid__img js-item-main-img" src="~~$i.image~"></a>
+
                         </div> <a href="#" class="item-grid__name">~~$i.param~</a>
                         <div class="item-grid__category">~~$i.name~</div>
-                        <div class="item-grid__meta">
+                        <!--div class="item-grid__meta">
                           <div class="item-grid__meta-left">
                             <div class="rate">
                               <div class="rate__inn">
@@ -31,12 +17,12 @@
                             </div>
                           </div>
                           <div class="item-grid__meta-right"> <a href="#" class="js-fav-add fav-btn "></a> </div>
-                        </div>
+                        </div-->
                         <div class="item-grid__actions">
                           <div class="item-grid__actions-left"> <span class="price">~~$i.cost~ р.</span> </div>
-                          <div class="item-grid__actions-right"> <a href="#" class="js-cart-add cart-btn "></a> <a href="#" class="js-fav-add fav-btn "></a> </div>
+                          <div class="item-grid__actions-right"> <a href="#" class="js-cart-add cart-btn "></a> <!--a href="#" class="js-fav-add fav-btn "></a--> </div> 
                         </div>
-                        <div class="item-grid__fast-view"> <a class="btn btn--pink js-fast-view-toggle" href="#">Быстрый просмотр</a> </div>
+                        <!--div class="item-grid__fast-view"> <a class="btn btn--pink js-fast-view-toggle" href="#">Быстрый просмотр</a> </div-->
                       </div>
                     </div>
                   </div>

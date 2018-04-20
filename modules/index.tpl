@@ -56,7 +56,7 @@
 
               </div>
 				
-			  ~~include file="tpl/catalog-items__nav.tpl"~
+			  ~~*include file="tpl/catalog-items__nav.tpl"*~
 
 			  ~~include file="tpl/items--highlight.tpl"~
 				
