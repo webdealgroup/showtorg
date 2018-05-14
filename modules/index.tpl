@@ -8,6 +8,7 @@
 <body>
   <div class="loader">
     <div class="loader__inn">
+      <img alt="" src="/assets/img/loader.svg">
     </div>
   </div>
   ~~include file="tpl/m-nav.tpl"~

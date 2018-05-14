@@ -1,72 +1,201 @@
 <?php
-	//echo "Отключено за неоплату хостинга. Сайт будет удален 19.04.2018 9:00."; die();
-	error_reporting(0);
-	session_start();
-
-    require_once('mysql.php');
-
-    define("TPL_PATH", "modules");
-    require_once('lib/smarty/Smarty.class.php');
-
-	$post 	= ($_SERVER["REQUEST_METHOD"] == "POST")? $_POST	: $_GET;
-
-	$post["page"] = !isset($post["page"]) ? "index" : $post["page"];
-	$post["action"] = !isset($post["action"]) ? "" : $post["action"];
-	$post["lng"] = !isset($post["lng"]) ? "home" : $post["lng"];
-	$post["page_id"] = !isset($post["page_id"]) ? "0" : $post["page_id"];
-
-	$post["item"] = !isset($post["item"]) ? "" : $post["item"];
-
-		$query="SELECT * FROM currency WHERE id = 1 ";
-		$res=rows($query);
-        $smarty->assign('currency',$res[0]['value']);
-   
-		$query="SELECT * FROM currency WHERE id = 2 ";
-		$res=rows($query);
-        $_SESSION['smarty']->assign('showing',$res[0]['value']);
-        
-        
-        
-    if(($post["mod_name"]=='item') && strlen($post["id"])>0)
-    {
-            $smarty->assign('item_page',row("SELECT name FROM `items` WHERE id = ".$post['id']));
-    }
     
-    if(isset($post["mod_name"]) && strlen($post["mod_name"])>0)
-    {
-        if(isset($_GET["path"]) && strlen($_GET["path"])>0)
-            $smarty->assign('path',$_GET["path"]);
+    //header("Content-type: text/html;charset=utf-8");
+    session_start();
+    require_once('site/libs/mysql.php'); // порядок подключения обязателен
 
-        if(isset($_POST["action"]) && strlen($_POST["action"])>0)
-            $smarty->assign('action',$_POST["action"]);
-    
-        echo $smarty->fetch($post["mod_name"].".tpl");
-        exit;
+
+    require_once('site/libs/smarty/Smarty.class.php');
+    include_once('site/modules/aModule.class.php');
+
+    function getRequest()
+    {
+        $params = array_merge($_GET, $_POST);
+        reset($params);
+        while(list($key,$value) = each($params)){
+            if (gettype($params[$key]) != "array"){
+                if (get_magic_quotes_gpc()){
+                    $value = stripslashes(trim($value));
+                }
+                $params[$key] = $value;
+            }
+        } 
+        return $params; 
     }
 
 
-    $smarty->assign('current_page',$post["page"]);
-	$smarty->assign('action',$post["action"]);
-	$smarty->assign('lng',$post["lng"]);
+    if($_POST['send_msg']=='true')
+    { 
+        
+        //echo "<pre>"; print_r($_POST); echo "</pre>"; //die(); 
+        
+        $message = array();
+        $k = 0;
+        foreach($_POST as $n=>$v)
+        {
+            if ($k>0)
+            {
+                
+                if($n == 'day')
+                {
+                    $message[$k]['name'] = $n;
+                    $message[$k]['txt'] = "1 день";
+                }
+                elseif($n == 'hour')
+                {
+                    $message[$k]['name'] = $n;
+                    $message[$k]['txt'] = "1 час";
+                }
+                else
+                {
+                    $message[$k]['name'] = $n;
+                    $message[$k]['txt'] = $v;
+
+                }
+            }
+            $k++;
+        }
+
+        $uploaddir = '/var/www/html/shtampovik.ru/upload/';
+        $uploadfile = $uploaddir . basename($_FILES['my_filename']['name']);
+
+        if (move_uploaded_file($_FILES['my_filename']['tmp_name'], $uploadfile)) {
+            //echo "Файл корректен и был успешно загружен.\n";
+        } else {
+            echo "Возможная атака с помощью файловой загрузки!\n";
+        }
+
+        $_SESSION['smarty']->assign('uploadfile', '/upload/'.basename($_FILES['my_filename']['name']));
+        $_SESSION['smarty']->assign('message', $message);
+
+        require_once "site/libs/SendMailSmtpClass.php"; // подключаем класс
+         
+        $mailSMTP = new SendMailSmtpClass('mail@webdeal.group', 'HzBpHuLn', 'ssl://smtp.yandex.ru', 'штамповик.рф', 465);
+        // $mailSMTP = new SendMailSmtpClass('логин', 'пароль', 'хост', 'имя отправителя');
+         
+        // заголовок письма
+        /**/
+        $headers= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html; charset=utf-8\r\n"; // кодировка письма
+        $headers .= "From: MAIL <mail@webdeal.group>\r\n"; // от кого письмо
+        
+        $result =  $mailSMTP->send(
+                                        '4999732707@mail.ru', 
+                                        'Заказ штамповик.рф', 
+                                        $_SESSION['smarty']->fetch('mail.tpl'), 
+                                        $headers
+        ); // отправляем письмо
+        // $result =  $mailSMTP->send('Кому письмо', 'Тема письма', 'Текст письма', 'Заголовки письма');
+        if($result === true){
+            //echo "ok2"; die();
+        }else{
+            echo "Письмо не отправлено. Ошибка: " . $result;
+        }
+    }
+
+    class router extends aModule{
+        function execute($arr)
+        {
+            
+            if (empty($arr['q']))
+            {
+                $arr['q']='/index';
+            } // если пусто, считаем что это index
+            $alias = split("[\/]+", $arr['q']); // разбираем строку
+            foreach($alias as $a)   {if($a!='') {$post[] = $a; $aliases[] = $a;}}
+            $page = "";
+            
+            foreach($post as $k=>$v) {if ($k==0) {$page .= $v;}else{$page .= "/".$v;}}
+
+            $dir = $post;                    // $dir[0] - алиас модуля
+            $post = array_reverse($post);    // $post[0] - алиас запрашиваемой страницы
+
+            if(isset($arr['mod_name']) && strlen($arr['mod_name']) > 0) // если идет непосредственное обращение к модулю
+            {
+                $_SESSION['smarty']->assign('post', $arr);
+                print ($_SESSION['smarty']->fetch('str:'.$arr['mod_name'])); // передаем управление модулю
+                exit (0);           
+            }
+
+            $res['get_tree'] = $this->get_data('get_tree', array());  // поучаем меню каталога
+            $node = set_menu_cat($post, $res);
+
+            $template = 'index.tpl';
+
+            print ($_SESSION['smarty']->fetch($template));
+        }
+    }
+
+    $rout = new router();
+    $rout->execute(getRequest());
 
 
 
-    
-    $tmp = $smarty->fetch("db:".$post["page"]);
-    
-    $_SESSION['smarty'] = $smarty = new Smarty;
-    $smarty->assign("content", $tmp);
+function set_menu_cat($post, $res)
+{
 
-    $result = row("SELECT * FROM `tree` WHERE `name` like '".$post['page']."'");
-    $smarty->assign('this_page',$result);
-   
-   
+    $menu = array();
+    foreach ($res['get_tree'] as $v) {  // перебираем меню с целю проставить ключи
+        $menu[$v['id']] = $v;
+        $menu[$v['id']]['child'] = 0;
+    }
+    foreach ($menu as $v)
+    {
+        if ($menu[$v['id']]['parent'] != 0) {  // проставляем наличие детей родителям
+            $menu[$v['parent']]['child'] = 1;
+        }
 
-   
-	if ($result)
-	{
-		$tpl=$result['tpl'];
-		print $smarty->fetch($tpl);
-	}
+        if ($menu[$v['id']]['name'] == $post[0]) { // ищем текущую страницу в меню
+            $node = $v;
+        }
+    }
 
+    $_SESSION['menu'] = $menu;
+    $_SESSION['smarty']->assign('menu', $menu);
+
+    if (!empty($node)) // если пункт меню обнаружен, получаем его свойства
+    {
+        $node['path'] = $post['path'];
+        $node['post'] = $post;
+
+        $remark = array(); // путь к странице
+        $i = $node['id'];
+        while ($i != 0)
+        {
+            $n = $menu[$i];
+            $remark[] = $menu[$i];
+            $i = $n['parent'];
+        }
+
+        $node['breadcrumbs'] = array_reverse($remark);
+        //$node['params'] = $arr;
+
+        // получить все id узлов, которые подчинены данному узлу
+        $condition = array();
+        foreach($menu as $m)
+        {
+            if($m['parent']==0) continue;
+            $i = $m['id'];
+            do
+            {
+                if($i==$node['id'])
+                {
+                    $condition[] = $m['id'];
+                    break;
+                }
+                $i = $menu[$i]['parent'];
+            }while($i!=0);
+        }
+        $condition[] = $node['id'];
+        $node['nodes'] = implode(",", $condition);
+
+    }
+    else
+    {
+        $node = null;
+    }
+
+
+    return $node;
+}
 ?>

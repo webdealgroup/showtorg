@@ -10,13 +10,13 @@ define('DBUSER', 'mypizzar_site'); //Database User
 define('DBPASS', 'hi1dHDjK'); //Password
 */
 
-define('DBHOST', 'localhost'); //Server
-define('DBNAME', 'rozavkolbe'); //Database
+define('DBHOST', '85.143.172.67'); //Server
+define('DBNAME', 'showtorg'); //Database
 
 //define('DBNAME', 'mypizzar_new'); //Database 
 
-define('DBUSER', 'root'); //Database User
-define('DBPASS', 'HzBpHuLn12'); //Password
+define('DBUSER', 'showtorg'); //Database User
+define('DBPASS', 'R?vU%#'); //Password
 /*
 define('DBHOST', 'localhost'); //Server
 define('DBNAME', 'mypizzar_all'); //Database
