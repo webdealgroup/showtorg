@@ -120,9 +120,23 @@
             $res['get_tree'] = $this->get_data('get_tree', array());  // поучаем меню каталога
             $node = set_menu_cat($post, $res);
 
-            $template = 'index.tpl';
+                if(isset($dir[0]) && strlen($dir[0])>0)
+                {
+                    switch ($dir[0]) {
 
-            print ($_SESSION['smarty']->fetch($template));
+                        case 'page':            print ($_SESSION['smarty']->fetch('str:page'));             exit (0); break; 
+                        case 'cart':            print ($_SESSION['smarty']->fetch('str:cart'));             exit (0); break;    
+                        case 'index':           print($_SESSION['smarty']->fetch('index.tpl'));             exit (0); break;                                                      
+
+                        default:
+
+                            http_response_code(404);
+                            //print ($_SESSION['smarty']->fetch('404.tpl'));
+                            
+                            break;
+                }
+
+
         }
     }
 

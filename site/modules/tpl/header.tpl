@@ -102,7 +102,7 @@
 		  </div>
 
 		  <div class="header__btn header__cart dropdown">
-			<a class="js-dropdown-toggle js-cart" href="#"> <i  class="ticon ticon-cart "></i> <span class="header__cart-count">0</span> </a>
+			<a class="js-dropdown-toggle js-cart" href="/cart/"> <i  class="ticon ticon-cart "></i> <span class="header__cart-count">0</span> </a>
 			<div class="dropdown__block cart-dropdown">
 			  <div class="cart-dropdown__items">
 				<div class="item-cart">
@@ -155,7 +155,7 @@
 				<div class="cart-dropdown__total">
 				  Итого: 9 999 р.
 				</div>
-				<a href="#" class="cart-dropdown__btn btn btn--pink">Перейти в корзину</a>
+				<a href="/cart/" class="cart-dropdown__btn btn btn--pink">Перейти в корзину</a>
 			  </div>
 			</div>
 		  </div>
