@@ -134,6 +134,7 @@
                             //print ($_SESSION['smarty']->fetch('404.tpl'));
                             
                             break;
+                    }
                 }
 
 
