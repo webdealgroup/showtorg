@@ -2,7 +2,7 @@
  
                 ~~foreach name=vmenu  from=$menu item=i~
 
-                ~~if $i.parent == 0~
+                ~~if $i.parent == 1~
                   <li class="categories-menu__item categories-menu__item--sub">
                     
                     <div class="categories-menu__item-inn">
