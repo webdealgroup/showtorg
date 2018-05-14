@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f431cc-f818-4126-8fc0-f0bcaf3765fd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/site/modules/tpl/header.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/site/modules/tpl/header.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%28^284^284729D4%%show_cart_short.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%28^284^284729D4%%show_cart_short.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%45^45E^45E480CD%%index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%45^45E^45E480CD%%index.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%4A^4A2^4A2D151F%%cart.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%4A^4A2^4A2D151F%%cart.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%6D^6D2^6D24CDF8%%db2%3A65.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%6D^6D2^6D24CDF8%%db2%3A65.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%73^735^735238A0%%db2%3A71.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%73^735^735238A0%%db2%3A71.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%AA^AA4^AA419209%%menu_g.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%AA^AA4^AA419209%%menu_g.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%CE^CE1^CE1A9833%%db%3Aindex.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%CE^CE1^CE1A9833%%db%3Aindex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%E7^E77^E77090A6%%search_form.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%E7^E77^E77090A6%%search_form.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/%%EA^EA5^EA5B691A%%db2%3A72.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/%%EA^EA5^EA5B691A%%db2%3A72.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/modules/menu_g/menu_g.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/modules/menu_g/menu_g.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/modules/menu_g/menu_g.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/site/modules/menu_g/menu_g.tpl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +17,26 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="442">
+              <caret line="119" column="94" lean-forward="true" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_g.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site/modules/menu_g/menu_g.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_g.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/site/modules/menu_g/menu_g.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -57,19 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/site/modules/tpl/header.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="187" column="13" lean-forward="true" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pages.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site/modules/pages/pages.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="425">
+              <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="58" />
               <folding>
                 <marker date="1525848493996" expanded="true" signature="319:354" ph="SELECT * FRO... currency" />
                 <marker date="1525848493996" expanded="true" signature="540:575" ph="SELECT * FRO... pages" />
@@ -78,44 +80,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aModule.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/modules/aModule.class.php">
+      <file leaf-file-name="pages.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site/modules/pages/pages.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="124" selection-start-line="124" selection-end-line="124" />
-              <folding>
-                <marker date="1523001728990" expanded="true" signature="7326:7457" ph="INSERT INTO `${$this-&gt;esc(stripslashes($table))}`... " />
-                <marker date="1523001728990" expanded="true" signature="8002:8044" ph="DELETE FROM " />
-              </folding>
+            <state relative-caret-position="-306" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site/modules/tpl/header.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="187" column="13" lean-forward="true" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function.mod.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/libs/smarty/plugins/function.mod.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="%%45^45E^45E480CD%%index.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/libs/smarty/templates_c/%%45^45E^45E480CD%%index.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="179" selection-start-line="179" selection-end-line="179" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Smarty.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/libs/smarty/Smarty.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="1317" selection-start-line="1317" selection-end-line="1317" />
-            </state>
-          </provider>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
@@ -156,11 +139,12 @@
         <option value="$PROJECT_DIR$/site/modules/menu_v/menu_v.class.php" />
         <option value="$PROJECT_DIR$/site/modules/menu_v/menu_v.tpl" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/site/modules/menu_g/menu_g.class.php" />
         <option value="$PROJECT_DIR$/site/modules/tpl/menu_v.tpl" />
         <option value="$PROJECT_DIR$/site/modules/index.tpl" />
         <option value="$PROJECT_DIR$/site/modules/rand_product/rand_product.tpl" />
         <option value="$PROJECT_DIR$/site/modules/tpl/header.tpl" />
+        <option value="$PROJECT_DIR$/site/modules/menu_g/menu_g.tpl" />
+        <option value="$PROJECT_DIR$/site/modules/menu_g/menu_g.class.php" />
       </list>
     </option>
   </component>
@@ -224,6 +208,20 @@
               <item name="localhost" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="menu_g" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="rand_product" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -258,7 +256,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="showtorg" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" editBeforeRun="true" server_name="localhost" start_url="/10296/" />
+    <configuration name="showtorg" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" editBeforeRun="true" server_name="localhost" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -279,7 +277,7 @@
       <workItem from="1525874229918" duration="1827000" />
       <workItem from="1526046271965" duration="919000" />
       <workItem from="1526116881933" duration="1865000" />
-      <workItem from="1526275993993" duration="2630000" />
+      <workItem from="1526275993993" duration="4600000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1522065091913</created>
@@ -292,7 +290,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49956000" />
+    <option name="totallyTimeSpent" value="51926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -338,23 +336,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/site/modules/tpl/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3145">
-          <caret line="185" column="51" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/modules/pages/pages.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1525848493996" expanded="true" signature="319:354" ph="SELECT * FRO... currency" />
-            <marker date="1525848493996" expanded="true" signature="540:575" ph="SELECT * FRO... pages" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/modules/rand_product/rand_product.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -590,34 +571,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/modules/menu_v/menu_v.class.php" />
     <entry file="file://$PROJECT_DIR$/site/modules/menu_v/menu_v.tpl" />
-    <entry file="file://$PROJECT_DIR$/site/modules/menu_g/menu_g.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/modules/menu_g/menu_g.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/modules/tpl/menu_v.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/modules/pages/pages.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1525848493996" expanded="true" signature="319:354" ph="SELECT * FRO... currency" />
-            <marker date="1525848493996" expanded="true" signature="540:575" ph="SELECT * FRO... pages" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/modules/index.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="843">
@@ -691,8 +641,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/modules/tpl/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="540">
           <caret line="187" column="13" lean-forward="true" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/modules/pages/pages.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="119" column="94" lean-forward="true" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/modules/pages/pages.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="58" />
+          <folding>
+            <marker date="1525848493996" expanded="true" signature="319:354" ph="SELECT * FRO... currency" />
+            <marker date="1525848493996" expanded="true" signature="540:575" ph="SELECT * FRO... pages" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/modules/menu_g/menu_g.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/modules/menu_g/menu_g.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>

@@ -9,7 +9,8 @@ class menu_g extends aModule
 
 	function execute($arr)
 	{
-		$this->mod_display($this->prot);
+        $_SESSION['smarty']->assign('menu_g', $this->get_data('get_pages', array()));  // поучаем меню
+	    $this->mod_display($this->prot);
 	}
     
 
