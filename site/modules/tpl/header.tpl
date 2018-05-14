@@ -183,7 +183,7 @@
 		<div class="nav__bar js-nav-bar"></div>
 		<ul class="nav__list" style="text-align:left;">
 
-                ~~*mod mod_name="menu_g" action=""*~
+                ~~mod mod_name="menu_g" action=""~
 
 		</ul>
 	  </div>
