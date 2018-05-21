@@ -677,7 +677,7 @@ $shortcuts[] = array(
 </div>
 
 
-<div id="ajax_loader" style="display:none;z-index:10000;border: 1px dotted black;background: #ffffff;"><a href="javascript:aj_load('hide','',0,0);" style="position:relative;background:#ffffff;float:right;margin-right:5px;"><img src="../god/images/shared/icons/fam/cross.gif" />Close</a><a href="javascript:aj_load('hide','',0,0);" id="img_viewer"><img src="img/ajax-loader.gif"/></a></div>
+<div id="ajax_loader" style="display:none;z-index:10000;border: 1px dotted black;background: #ffffff;"><a href="javascript:aj_load('hide','',0,0);" style="position:relative;background:#ffffff;float:right;margin-right:5px;"><img src="../admin/images/shared/icons/fam/cross.gif" />Close</a><a href="javascript:aj_load('hide','',0,0);" id="img_viewer"><img src="img/ajax-loader.gif"/></a></div>
 
 </body>
 </html>
