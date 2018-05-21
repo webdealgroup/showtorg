@@ -6,7 +6,7 @@
 
 
     require_once('site/libs/smarty/Smarty.class.php');
-    include_once('site/modules/aModule.class.php');
+    require_once('site/modules/aModule.class.php');
 
     function getRequest()
     {
