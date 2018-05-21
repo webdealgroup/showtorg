@@ -1,5 +1,5 @@
 <?php
-include_once('site/modules/aModule.class.php');
+require_once('site/modules/aModule.class.php');
 
 class engine extends aModule
 {

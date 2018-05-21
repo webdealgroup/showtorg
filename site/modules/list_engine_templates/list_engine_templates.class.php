@@ -1,5 +1,5 @@
  <?php
-include_once('modules/aModule.class.php');
+require_once('site/modules/aModule.class.php');
 
 class list_engine_templates extends aModule
 {
@@ -11,9 +11,9 @@ class list_engine_templates extends aModule
 	{
 		//echo "<pre>";print_r($arr);echo "<pre>";die();
 
-    	$data = rows("SELECT * FROM templates");
+    	//$data = rows("SELECT * FROM templates");
 
-		$_SESSION['smarty']->assign('templates',$data);
+		//$_SESSION['smarty']->assign('templates',$data);
 		$this->mod_display($this->prot);
 	}
     
